@@ -1,6 +1,6 @@
 # VBA Functions 
-東京在住のExcelでシステム開発しているSEです。  
-少しでもVBAが広がればと思い、ライブラリの一部を公開していきます。  
+Excelでシステム開発しているSEです。(東京在住)  
+少しでもVBAが広がればと思い、ライブラリの一部を公開していこうと思います。  
 
 I'm SE of Excel VBA in Tokyo in Japan.
 
