@@ -15,21 +15,32 @@ When VBA Module exported , the file convert from Shift-JIS to UTF-8
 
 ## M_Collection 
 Collection Functions  
-*Collection_to_Array  
+- Collection_to_Array*  
 
 ## M_Dictionary 
 Dictionary Functions (Reference : Microsoft Scripting Runtime)  
-  ・Dictionary_Copy  
-  ・Dictionary_Merge  
-  ・Dictionary_to_Array  
+- Dictionary_Copy  
+- Dictionary_Merge  
+- Dictionary_to_Array  
   …  
 
 ## M_String 
-  ・String_to_Number  
+- String_to_Number  
+- String_Count (very faster than mid)  
+- String_Is_xxx  
+  …  
 
 ## M_Number 
+Number Converter
 
 ## M_Math 
+- Math_Randmize
+- Math_Round
+- Math_Max
+  …  
 
 ## M_Date 
-
+- Date_DatePart
+- Date_IsDateTime
+- Date_Diff
+  …  
