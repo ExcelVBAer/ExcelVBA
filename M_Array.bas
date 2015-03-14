@@ -75,8 +75,8 @@ Public Function Array_Paste(T_Range As Range, DataAry As Variant)
 End Function
 
 Public Function Array_RandomArray(Dimention As Long, _
-                                  E_Row As Long, _
-                                  Optional E_Col As Long = 0, _
+                                  Row_End As Long, _
+                                  Optional Col_End As Long = 0, _
                                   Optional NotRandom As Boolean = False, _
                                   Optional Base0 As Boolean = True, _
                                   Optional RandomSize As Long = 1000) As Variant
@@ -103,41 +103,46 @@ Public Function Array_RandomArray(Dimention As Long, _
     Select Case Dimention
     
     Case 1
-    
+        
+        If Row_End < Base_Num Then Exit Function
+        
         'ランダム数を格納する配列を設定
-        ReDim T_Ary(Base_Num To E_Row)
+        ReDim T_Ary(Base_Num To Row_End)
         
         'ランダム数を配列に格納
         If NotRandom = False Then
             Call Randomize
-            For i = Base_Num To E_Row
+            For i = Base_Num To Row_End
                 T_Ary(i) = Int(T_Size * Rnd + 1)
             Next
         Else
-            For i = Base_Num To E_Row
+            For i = Base_Num To Row_End
                 T_Ary(i) = i
             Next
         End If
         
     Case 2
         
+        If Row_End < Base_Num Then Exit Function
+        If Col_End < Base_Num Then Exit Function
+        
         'ランダム数を格納する配列を設定
-        ReDim T_Ary(Base_Num To E_Row, Base_Num To E_Col)
+        ReDim T_Ary(Base_Num To Row_End, Base_Num To Col_End)
         
         If NotRandom = False Then
             
             'ランダム数を配列に格納
             Call Randomize
-            For i = Base_Num To E_Row
-                For j = Base_Num To E_Col
+            For i = Base_Num To Row_End
+                For j = Base_Num To Col_End
                     T_Ary(i, j) = Int(T_Size * Rnd + 1)
                 Next
             Next
         
         Else
             
-            For i = Base_Num To E_Row
-                For j = Base_Num To E_Col
+            For i = Base_Num To Row_End
+                For j = Base_Num To Col_End
                     T_Ary(i, j) = CStr(CStr(i) & "," & CStr(j))
                 Next
             Next
