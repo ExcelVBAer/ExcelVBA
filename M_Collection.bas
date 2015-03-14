@@ -1,7 +1,6 @@
 Attribute VB_Name = "M_Collection"
 Option Explicit
 
-
 Public Function Collection_to_Array(T_Colect As Collection) As Variant
     
     Dim T_Dim       As Long
