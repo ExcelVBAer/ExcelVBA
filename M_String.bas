@@ -1,8 +1,8 @@
-Attribute VB_Name = "M_String"
+ï»¿Attribute VB_Name = "M_String"
 Option Explicit
 
 Public Function String_ASCII(T_String As String) As String
-'yASCII‚ğ’²‚×‚Ä•\¦z
+'ã€ASCIIã‚’èª¿ã¹ã¦è¡¨ç¤ºã€‘
 '
     Dim i           As Long
     Dim Len_Str     As Long
@@ -15,7 +15,7 @@ Public Function String_ASCII(T_String As String) As String
         
     Next i
     
-    '- ––”ö‚Ì[" "]‚ğíœ‚·‚é
+    '- æœ«å°¾ã®[" "]ã‚’å‰Šé™¤ã™ã‚‹
     RetStr = RTrim$(RetStr)
     
     String_ASCII = RetStr
@@ -30,26 +30,26 @@ Public Function String_to_StrAry(T_String As String) As String()
     
     If T_String = "" Then Exit Function
     
-    '- ”z—ñ‚É‚·‚éÅIˆÊ’u‚ğŠi”[
+    '- é…åˆ—ã«ã™ã‚‹æœ€çµ‚ä½ç½®ã‚’æ ¼ç´
     Len_End = Len(T_String)
     
     ReDim StrAry(1 To Len_End)
     
-    '- 1•¶š‚Ã‚Â,”z—ñ‚ÉŠi”[
+    '- 1æ–‡å­—ã¥ã¤,é…åˆ—ã«æ ¼ç´
     For i = 1 To Len_End
         
         StrAry(i) = Mid$(T_String, i, 1)
         
     Next
     
-    '- –ß‚è’l
+    '- æˆ»ã‚Šå€¤
     String_to_StrAry = StrAry
     
 End Function
 
 Public Function String_Count(T_String As String, FindStr As String, Optional CompareMode As VbCompareMethod = vbBinaryCompare) As Long
-'- •¶š—ñ“à‚Ìw’è•¶š‚ğƒJƒEƒ“ƒg
-'+ 200–œHit:0.30s
+'- æ–‡å­—åˆ—å†…ã®æŒ‡å®šæ–‡å­—ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
+'+ 200ä¸‡Hit:0.30s
 
     Dim At_Start    As Long
     Dim Cnt_Found   As Long
@@ -107,20 +107,20 @@ Public Function String_RepeatStr_to_OneStr(T_String As String, OneStr As String)
     Dim RetStr  As String
     Dim StrRp   As String
     
-    '- ˆø”‚ğˆê’UŠi”[
+    '- å¼•æ•°ã‚’ä¸€æ—¦æ ¼ç´
     RetStr = T_String
     
-    '- w’è‚Ì˜A‘±•¶š—ñ‚ğì¬
+    '- æŒ‡å®šã®é€£ç¶šæ–‡å­—åˆ—ã‚’ä½œæˆ
     StrRp = OneStr & OneStr
     
-    '- w’è‚Ì˜A‘±•¶š—ñ‚ª‚ ‚éê‡
+    '- æŒ‡å®šã®é€£ç¶šæ–‡å­—åˆ—ãŒã‚ã‚‹å ´åˆ
     Do
-        '- ‚QŒÂ¨‚PŒÂ‚É•ÏŠ·
+        '- ï¼’å€‹â†’ï¼‘å€‹ã«å¤‰æ›
         RetStr = Replace(RetStr, StrRp, OneStr)
         
     Loop Until InStr(1, RetStr, StrRp) = 0
     
-    '- –ß‚è’l
+    '- æˆ»ã‚Šå€¤
     String_RepeatStr_to_OneStr = RetStr
     
 End Function
@@ -168,15 +168,15 @@ Public Function String_Insert(T_String As String, At As Long, InsertStr As Strin
     
     Len_Str = Len(T_String)
     
-    '- ’Ç‰Á‰ÓŠ‚ª•¶š—ñ‚Ì“r’†‚Ìê‡
+    '- è¿½åŠ ç®‡æ‰€ãŒæ–‡å­—åˆ—ã®é€”ä¸­ã®å ´åˆ
     If At < Len_Str Then
         
-        '- “r’†‚É’Ç‰Á
+        '- é€”ä¸­ã«è¿½åŠ 
         T_Str = Left$(T_String, At - 1) & InsertStr & Mid$(T_String, At)
         
     Else
     
-        '- Œã‚ë‚É’Ç‰Á
+        '- å¾Œã‚ã«è¿½åŠ 
         T_Str = T_String & InsertStr
         
     End If
@@ -303,12 +303,12 @@ Public Function String_Mid_Count(T_String As String, CountStr As String, Optiona
     Else
         At_End = Finish
     End If
-    '- ŠJnˆÊ’u‚Ìİ’è‚ª‹t‚Ìê‡AI—¹
+    '- é–‹å§‹ä½ç½®ã®è¨­å®šãŒé€†ã®å ´åˆã€çµ‚äº†
     If At_End < Start Then Exit Function
     
     Len_Cnt = Len(CountStr)
     
-    '- ŒŸõƒGƒŠƒA‚ªŒŸõ•¶š‚æ‚è¬‚³‚¢ê‡AI—¹
+    '- æ¤œç´¢ã‚¨ãƒªã‚¢ãŒæ¤œç´¢æ–‡å­—ã‚ˆã‚Šå°ã•ã„å ´åˆã€çµ‚äº†
     If (At_End - Start + 1) < Len_Cnt Then Exit Function
     
     At_Cnt = Start
@@ -476,8 +476,8 @@ Public Function String_Equals(String1 As String, String2 As String, _
     If IgnoreNonSpace = True Then
         T_Str1 = Replace(T_Str1, " ", "")
         T_Str2 = Replace(T_Str2, " ", "")
-        T_Str1 = Replace(T_Str1, "@", "")
-        T_Str2 = Replace(T_Str2, "@", "")
+        T_Str1 = Replace(T_Str1, "ã€€", "")
+        T_Str2 = Replace(T_Str2, "ã€€", "")
     End If
     
     If IgnoreKanaType = True Then
@@ -490,8 +490,8 @@ Public Function String_Equals(String1 As String, String2 As String, _
 End Function
 
 Public Function String_A_z(Index As Long) As String
-'+ 65-90(A-Z)¨1-26
-'+ 97-122(a-z)¨27-52
+'+ 65-90(A-Z)â†’1-26
+'+ 97-122(a-z)â†’27-52
     
     Dim T_Index     As Integer
     Dim Idx_Max     As Integer
@@ -500,13 +500,13 @@ Public Function String_A_z(Index As Long) As String
     
     Idx_Max = 52
     
-    '- ƒAƒ‹ƒtƒ@ƒxƒbƒg‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ’²®
+    '- ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’èª¿æ•´
     T_Index = Index Mod Idx_Max
     If T_Index = 0 Then
         T_Index = Idx_Max
     End If
     
-    '- •¶šƒR[ƒh‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ’²®
+    '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’èª¿æ•´
     If T_Index <= 26 Then
         Idx_Adjust = 65
     Else
@@ -523,7 +523,7 @@ Public Function String_A_z_All() As String
     
     Dim i       As Long
     
-    '- ƒAƒ‹ƒtƒ@ƒxƒbƒg•¶š—ñ‚ğì¬
+    '- ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆæ–‡å­—åˆ—ã‚’ä½œæˆ
     For i = 1 To 52
         String_A_z_All = String_A_z_All & String_A_z(i)
     Next
@@ -543,7 +543,7 @@ Public Function String_Marks(Optional Wide As Boolean = False) As String()
     
     Idx_Max = 255
     
-    '- ‹L†‚ÌƒCƒ“ƒfƒbƒNƒX«‘‚ğì¬
+    '- è¨˜å·ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹è¾æ›¸ã‚’ä½œæˆ
     For i = 0 To Idx_Max
         Select Case i
         Case 32 To 47, 58 To 64, 91 To 96, 123 To 126, 160 To 165, 222 To 223
@@ -553,11 +553,11 @@ Public Function String_Marks(Optional Wide As Boolean = False) As String()
         End Select
     Next
     
-    '- Ši”[”z—ñ‚ğ’²®
-    '+ ƒJƒ“ƒ}‚ªŠÜ‚Ü‚ê‚éˆ×,Œã‚ÅSplit‚ª‚Å‚«‚È‚¢‚Ì‚Å
+    '- æ ¼ç´é…åˆ—ã‚’èª¿æ•´
+    '+ ã‚«ãƒ³ãƒãŒå«ã¾ã‚Œã‚‹ç‚º,å¾Œã§SplitãŒã§ããªã„ã®ã§
     ReDim MarkAry(0 To Dic_Idx.Count - 1)
     
-    '- Še‹L†‚ğ”z—ñ‚ÉŠi”[
+    '- å„è¨˜å·ã‚’é…åˆ—ã«æ ¼ç´
     Idx_Mark = 0
     For i = 0 To Idx_Max
         
@@ -577,7 +577,7 @@ Public Function String_Marks(Optional Wide As Boolean = False) As String()
         
     Next
     
-    '- –ß‚è’l
+    '- æˆ»ã‚Šå€¤
     String_Marks = MarkAry
     
     Set Dic_Idx = Nothing
@@ -614,13 +614,13 @@ Public Function String_to_Binary(T_Str As String) As String()
     Dim i           As Long
     Dim BinAry()    As String
     
-    '- •¶š—ñ‚ğ•¶šƒR[ƒh”z—ñ‚É•ÏŠ·
+    '- æ–‡å­—åˆ—ã‚’æ–‡å­—ã‚³ãƒ¼ãƒ‰é…åˆ—ã«å¤‰æ›
     ByteAry = String_to_Byte(T_Str)
     
     ReDim BinAry(LBound(ByteAry, 1) To UBound(ByteAry, 1))
     
-    '- •¶šƒR[ƒh‚ğ16i”‚É•ÏŠ·
-    '+ 2ƒoƒCƒg•¶š‚Ìl—¶‚Í–³‚µ
+    '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’16é€²æ•°ã«å¤‰æ›
+    '+ 2ãƒã‚¤ãƒˆæ–‡å­—ã®è€ƒæ…®ã¯ç„¡ã—
     For i = LBound(ByteAry, 1) To UBound(ByteAry, 1)
         
         BinAry(i) = Hex(ByteAry(i))
@@ -657,25 +657,25 @@ Public Function String_from_Binary(BinAry() As Byte) As String()
         
         Select Case T_Byte
             
-            Case 0 To 127, 161 To 223 'š‰p”š‚ÆƒJƒi
+            Case 0 To 127, 161 To 223 'â˜…è‹±æ•°å­—ã¨ã‚«ãƒŠ
                 
-                '- •¶šƒR[ƒh‚ğ•¶š‚É•ÏŠ·
+                '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’æ–‡å­—ã«å¤‰æ›
                 T_Str = Chr(T_Byte)
                 StrAry(i) = T_Str
                 
             Case Else
                    
-                '- •ÏŠ·ƒtƒ‰ƒO‚ğƒXƒCƒbƒ`
+                '- å¤‰æ›ãƒ•ãƒ©ã‚°ã‚’ã‚¹ã‚¤ãƒƒãƒ
                 Flg_Conv = True
                 
-                '- ƒCƒ“ƒfƒbƒNƒX‚ğ•Û
+                '- ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ä¿æŒ
                 i1 = i
                 
-                '- ƒoƒCƒiƒŠ’l‚ğ•Û
+                '- ãƒã‚¤ãƒŠãƒªå€¤ã‚’ä¿æŒ
                 T_Byte1 = T_Byte
                 T_Byte2 = 0
                 
-                '- •¶šƒR[ƒh‚Æ‚µ‚Ä•¶š‚É‚µ•ÏŠ·
+                '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ã¨ã—ã¦æ–‡å­—ã«è©¦ã—å¤‰æ›
                 T_Str = Chr(T_Byte)
                 StrAry(i) = T_Str
                     
@@ -684,27 +684,27 @@ Public Function String_from_Binary(BinAry() As Byte) As String()
         
         Else
         
-                    '- •ÏŠ·ƒtƒ‰ƒO‚ğƒXƒCƒbƒ`
+                    '- å¤‰æ›ãƒ•ãƒ©ã‚°ã‚’ã‚¹ã‚¤ãƒƒãƒ
                     Flg_Conv = False
                     
-                    '- ƒCƒ“ƒfƒbƒNƒX‚ğ•Û
+                    '- ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ä¿æŒ
                     i2 = i
                     
-                    '- ƒoƒCƒiƒŠ’l‚ğ•Û
+                    '- ãƒã‚¤ãƒŠãƒªå€¤ã‚’ä¿æŒ
                     T_Byte2 = T_Byte
                     
-                    '- ˜A‘±‚µ‚Ä‚¢‚éê‡
+                    '- é€£ç¶šã—ã¦ã„ã‚‹å ´åˆ
                     If i1 + 1 = i2 Then
                         
-                        '- ‡‚í‚¹‚Ä•ÏŠ·
+                        '- åˆã‚ã›ã¦å¤‰æ›
                         T_Str = Chr(CLng("&H" & (Hex(T_Byte1) & Hex(T_Byte2))))
                         
-                        '- ·‚µ‘Ö‚¦‚é
+                        '- å·®ã—æ›¿ãˆã‚‹
                         StrAry(i - 1) = T_Str
                     
                     Else
                            
-                        '- •¶šƒR[ƒh‚Æ‚µ‚Ä•¶š‚É‚µ•ÏŠ·
+                        '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ã¨ã—ã¦æ–‡å­—ã«è©¦ã—å¤‰æ›
                         T_Str = Chr(T_Byte)
                         StrAry(i) = T_Str
                         
@@ -751,7 +751,7 @@ Public Function String_Is_Hiragana(T_String As String) As Boolean
         
         Select Case Mid$(T_String, i, 1)
         
-        Case "‚ " To "‚ñ"
+        Case "ã‚" To "ã‚“"
         
         Case Else
             Exit Function
@@ -775,9 +775,9 @@ Public Function String_Is_Katakana(T_String As String) As Boolean
         
         Select Case Mid$(T_String, i, 1)
         
-        Case "ƒA" To "ƒ“"
+        Case "ã‚¢" To "ãƒ³"
         
-        Case "±" To "İ"
+        Case "ï½±" To "ï¾"
         
         Case Else
             Exit Function
@@ -805,9 +805,9 @@ Public Function String_Is_Alphabet(T_String As String) As Boolean
         
         Case "A" To "Z"
         
-        Case "‚`" To "‚y"
+        Case "ï¼¡" To "ï¼º"
         
-        Case "‚" To "‚š"
+        Case "ï½" To "ï½š"
         
         Case Else
             Exit Function
@@ -833,7 +833,7 @@ Public Function String_Is_Number(T_String As String) As Boolean
         
         Case "0" To "9"
         
-        Case "‚O" To "‚X"
+        Case "ï¼" To "ï¼™"
         
         Case Else
             Exit Function
@@ -853,7 +853,7 @@ Public Function String_Is_Mark(T_String As String) As Boolean
     Dim MarkAry()   As String
     Dim Dic_Mark    As Scripting.Dictionary
     
-    '+ ‹L†«‘‚ğì¬(”¼ŠpA‘SŠp)
+    '+ è¨˜å·è¾æ›¸ã‚’ä½œæˆ(åŠè§’ã€å…¨è§’)
     Set Dic_Mark = New Scripting.Dictionary
     MarkAry = String_Marks()
     With Dic_Mark
@@ -885,7 +885,7 @@ End Function
 
 Public Function String_Is_Word(T_String As String) As Boolean
     
-    '+ ”šA‹L†ˆÈŠO  •¶š(ƒAƒ‹ƒtƒ@ƒxƒbƒgA‚Ğ‚ç‚ª‚ÈAƒJƒ^ƒJƒiAŠ¿š)
+    '+ æ•°å­—ã€è¨˜å·ä»¥å¤– ï¼ æ–‡å­—(ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã€ã²ã‚‰ãŒãªã€ã‚«ã‚¿ã‚«ãƒŠã€æ¼¢å­—)
     If String_Is_Number(T_String) = True Then Exit Function
     
     If String_Is_Mark(T_String) = True Then Exit Function
@@ -910,7 +910,7 @@ Public Function String_Is_Kanji(T_String As String) As Boolean
     
     Len_Str = Len(T_String)
     
-    '- •¶šƒR[ƒh‚ª255ˆÈ‰º‚Ìê‡AŠ¿š‚Í—L‚è“¾‚È‚¢
+    '- æ–‡å­—ã‚³ãƒ¼ãƒ‰ãŒ255ä»¥ä¸‹ã®å ´åˆã€æ¼¢å­—ã¯æœ‰ã‚Šå¾—ãªã„
     For i = 1 To Len_Str
         
         Str1 = Mid$(T_String, i, 1)
@@ -919,7 +919,7 @@ Public Function String_Is_Kanji(T_String As String) As Boolean
         
     Next
     
-    '+ ”šAƒAƒ‹ƒtƒ@ƒxƒbƒgA‹L†A‚Ğ‚ç‚ª‚ÈAƒJƒ^ƒJƒiˆÈŠO  Š¿š
+    '+ æ•°å­—ã€ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆã€è¨˜å·ã€ã²ã‚‰ãŒãªã€ã‚«ã‚¿ã‚«ãƒŠä»¥å¤– ï¼ æ¼¢å­—
     If String_Is_Number(T_String) = True Then Exit Function
     
     If String_Is_Alphabet(T_String) = True Then Exit Function
@@ -961,7 +961,7 @@ End Function
 Public Function String_Replace1(T_String As String, Find As String, Replaces As String, _
                                 Optional Compare As VbCompareMethod = VbCompareMethod.vbBinaryCompare) As String
     
-'- ‚P‰ñ‚¾‚¯Replace‚·‚é
+'- ï¼‘å›ã ã‘Replaceã™ã‚‹
 
     String_Replace1 = Replace(T_String, Find, Replaces, 1, 1, Compare)
     
@@ -982,7 +982,7 @@ Public Function String_Binarys_to_Texts(ByteAry() As Byte) As String()
     Dim i2              As Long
     Dim Len_Ary         As Long
     
-    '- ”z—ñ‚ª–³‚©‚Á‚½ê‡AI—¹
+    '- é…åˆ—ãŒç„¡ã‹ã£ãŸå ´åˆã€çµ‚äº†
     On Error Resume Next
     Len_Ary = UBound(ByteAry, 1) - LBound(ByteAry, 1) + 1
     On Error GoTo 0
@@ -990,7 +990,7 @@ Public Function String_Binarys_to_Texts(ByteAry() As Byte) As String()
     
     ReDim TextAry(LBound(ByteAry, 1) To UBound(ByteAry, 1))
     
-    '+ ‰üsƒR[ƒh‚ğ’T‚µ‚ÄA‰üs‚µA”z—ñ‚ÅŠi”[‚·‚é
+    '+ æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã‚’æ¢ã—ã¦ã€æ”¹è¡Œã—ã€é…åˆ—ã§æ ¼ç´ã™ã‚‹
     
     Flg_Conv = False
     For i = LBound(ByteAry, 1) To UBound(ByteAry, 1)
@@ -998,7 +998,7 @@ Public Function String_Binarys_to_Texts(ByteAry() As Byte) As String()
         T_Byte = ByteAry(i)
         
         Select Case T_Byte
-            Case 0 To 127, 161 To 223 'š‰p”š‚ÆƒJƒi
+            Case 0 To 127, 161 To 223 'â˜…è‹±æ•°å­—ã¨ã‚«ãƒŠ
                 T_Str = Chr(T_Byte)
                 TextAry(i) = T_Str
                 
@@ -1047,7 +1047,7 @@ Public Function String_Binarys_to_Texts(ByteAry() As Byte) As String()
 End Function
 
 Public Function String_Unvisible_to_Visible(T_String As String) As String
-'+ §Œä•¶š‚âA–Ú‹•s”\‚È•¶š—ñ‚ğA–Ú‹‰Â”\‚É‚·‚é
+'+ åˆ¶å¾¡æ–‡å­—ã‚„ã€ç›®è¦–ä¸èƒ½ãªæ–‡å­—åˆ—ã‚’ã€ç›®è¦–å¯èƒ½ã«ã™ã‚‹
     
     Dim i           As Long
     Dim Len_Str     As Long
@@ -1124,7 +1124,7 @@ Private Function PRV_Dic_Unvisible() As Scripting.Dictionary
             Case Chr(30):   Str_View = "[Record Sepalator]"
             Case Chr(31):   Str_View = "[Unit Sepalator]"
             Case Chr(32):   Str_View = "[Space]"
-            Case "@":      Str_View = "[SpaceW]"
+            Case "ã€€":      Str_View = "[SpaceW]"
             Case Chr(127):  Str_View = "[Delete]"
             Case Chr(128):  Str_View = "[Chr(128)]"
             
@@ -1147,16 +1147,16 @@ Private Function PRV_Dic_Unvisible() As Scripting.Dictionary
 End Function
 
 Public Function String_LenB(T_String As String)
-'- •¶š—ñ‚ÌƒoƒCƒg”‚ğ•Ô‚·(ƒ}ƒ‹ƒ`ƒoƒCƒg(MBCS)‚É‘Î‰)
+'- æ–‡å­—åˆ—ã®ãƒã‚¤ãƒˆæ•°ã‚’è¿”ã™(ãƒãƒ«ãƒãƒã‚¤ãƒˆ(MBCS)ã«å¯¾å¿œ)
 '+ MBCS: Multibyte Character Set
-'+ LenBŠÖ”‚Å‚ÍA‘S‚Ä‚ª2ƒoƒCƒg•¶š‚Æ‚µ‚ÄŠ·Z‚³‚ê‚Ä‚µ‚Ü‚¤i[A]‚ª2ƒoƒCƒg‚Æ‚µ‚Äj
+'+ LenBé–¢æ•°ã§ã¯ã€å…¨ã¦ãŒ2ãƒã‚¤ãƒˆæ–‡å­—ã¨ã—ã¦æ›ç®—ã•ã‚Œã¦ã—ã¾ã†ï¼ˆ[A]ãŒ2ãƒã‚¤ãƒˆã¨ã—ã¦ï¼‰
     
     String_LenB = LenB(StrConv(T_String, vbFromUnicode))
     
 End Function
 
 Public Function String_to_Array(T_String As String, Optional CrLf As String = vbCrLf, Optional Delimiter As String = ",") As Variant
-'- •¶š—ñ(ƒeƒLƒXƒg)‚ğ”z—ñ‚É•ÏŠ·‚·‚é
+'- æ–‡å­—åˆ—(ãƒ†ã‚­ã‚¹ãƒˆ)ã‚’é…åˆ—ã«å¤‰æ›ã™ã‚‹
     
     Dim At_S        As Long
     Dim At_E        As Long
@@ -1173,13 +1173,13 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
     Dim Len_Str     As Long
     Dim Len_CrLf    As Long
     
-    '- •¶š—ñ‚ª–³‚©‚Á‚½ê‡,I—¹
+    '- æ–‡å­—åˆ—ãŒç„¡ã‹ã£ãŸå ´åˆ,çµ‚äº†
     If T_String = "" Then Exit Function
     
-    '- ‰üsƒR[ƒh‚Ì•¶š”‚ğæ“¾
+    '- æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®æ–‡å­—æ•°ã‚’å–å¾—
     Len_CrLf = Len(CrLf)
     
-    '- s”‚ğæ“¾
+    '- è¡Œæ•°ã‚’å–å¾—
     Cnt_Row = 1
     ACrLf = 1
     Do
@@ -1188,7 +1188,7 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
         Cnt_Row = Cnt_Row + 1
     Loop
     
-    '- 1s‚Ìê‡A1ŸŒ³”z—ñ‚Å•Ô‚·
+    '- 1è¡Œã®å ´åˆã€1æ¬¡å…ƒé…åˆ—ã§è¿”ã™
     If Cnt_Row = 1 Then
         
         SplitAry = Split(T_String, Delimiter)
@@ -1201,7 +1201,7 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
         
     Else
         
-        '- •¶š—ñ‚Ì’·‚³‚ğæ“¾
+        '- æ–‡å­—åˆ—ã®é•·ã•ã‚’å–å¾—
         Len_Str = Len(T_String)
         
         At_S = 1
@@ -1209,32 +1209,32 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
         Cnt_Col = 0
         i = 0
         Do
-            '- ŠJnˆÊ’u‚ªÅŒã‚Ìê‡,I—¹ˆÊ’u‚àÅŒã‚É‚·‚é
+            '- é–‹å§‹ä½ç½®ãŒæœ€å¾Œã®å ´åˆ,çµ‚äº†ä½ç½®ã‚‚æœ€å¾Œã«ã™ã‚‹
             If At_S = Len_Str Then
                 At_E = Len_Str
                 
             Else
             
-                '- I—¹ˆÊ’u‚ğŒŸõ(‰üsƒR[ƒh‚Ì1‚ÂŒã‚ë)
+                '- çµ‚äº†ä½ç½®ã‚’æ¤œç´¢(æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®1ã¤å¾Œã‚)
                 At_E = InStr(At_S, T_String, CrLf) - 1
                 
-                '- I—¹ˆÊ’u‚ª–³‚¯‚ê‚ÎAÅŒã‚Ü‚Åİ’è
+                '- çµ‚äº†ä½ç½®ãŒç„¡ã‘ã‚Œã°ã€æœ€å¾Œã¾ã§è¨­å®š
                 If At_E = -1 Then
                     At_E = Len_Str
                 End If
                 
             End If
             
-            '- ƒf[ƒ^‚ª‚ ‚Á‚½ê‡
+            '- ãƒ‡ãƒ¼ã‚¿ãŒã‚ã£ãŸå ´åˆ
             If At_S <= At_E Then
                 
-                '- ƒf[ƒ^”ÍˆÍ‚ğØ‚èo‚·
+                '- ãƒ‡ãƒ¼ã‚¿ç¯„å›²ã‚’åˆ‡ã‚Šå‡ºã™
                 DataStr = Mid$(T_String, At_S, At_E - At_S + 1)
                 
-                '- ƒf[ƒ^‚ğ‹æØ‚è•¶š‚Å•ªŠ„
+                '- ãƒ‡ãƒ¼ã‚¿ã‚’åŒºåˆ‡ã‚Šæ–‡å­—ã§åˆ†å‰²
                 SplitAry = Split(DataStr, Delimiter)
                     
-                '- —ñ”‚ğƒJƒEƒ“ƒg‚µ,Ši”[”z—ñ‚ğì¬(‰‰ñ‚Ì‚İ)
+                '- åˆ—æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆã—,æ ¼ç´é…åˆ—ã‚’ä½œæˆ(åˆå›ã®ã¿)
                 If Cnt_Col = 0 Then
                     Cnt_Col = UBound(SplitAry, 1) - LBound(SplitAry, 1) + 1
                     ReDim DataAry(0 To Cnt_Row - 1, 0 To Cnt_Col - 1)
@@ -1243,21 +1243,21 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
                 Col_L = LBound(SplitAry, 1)
                 Col_U = UBound(SplitAry, 1)
                     
-                '- —ñ”‚ª“r’†‚Å‘‚¦‚Ä‚¢‚éê‡A—ñ‚ğŠg’£‚µ‚Ä‘Î‰
+                '- åˆ—æ•°ãŒé€”ä¸­ã§å¢—ãˆã¦ã„ã‚‹å ´åˆã€åˆ—ã‚’æ‹¡å¼µã—ã¦å¯¾å¿œ
                 If Cnt_Col < (Col_U - Col_L + 1) Then
                     Cnt_Col = Col_U - Col_L + 1
                     ReDim Preserve DataAry(0 To Cnt_Row - 1, 0 To Cnt_Col - 1)
                 End If
                 
-                '- Še—ñ‚Ì’l‚ğŠi”[‚µ‚Ä‚¢‚­
+                '- å„åˆ—ã®å€¤ã‚’æ ¼ç´ã—ã¦ã„ã
                 For j = Col_L To Col_U
                     DataAry(i, j) = SplitAry(j)
                 Next
                     
-            '- ‰üs‚ª‘±‚¢‚Ä‚¢‚éê‡
+            '- æ”¹è¡ŒãŒç¶šã„ã¦ã„ã‚‹å ´åˆ
             Else
                 
-                '- —ñ”‚ğ1‚Æ‚·‚é(‰‰ñ‚Ì‚İ)
+                '- åˆ—æ•°ã‚’1ã¨ã™ã‚‹(åˆå›ã®ã¿)
                 If Cnt_Col = 0 Then
                     Cnt_Col = 1
                     ReDim DataAry(0 To Cnt_Row - 1, 0 To Cnt_Col - 1)
@@ -1265,13 +1265,13 @@ Public Function String_to_Array(T_String As String, Optional CrLf As String = vb
                 
             End If
             
-            '- ŠJnˆÊ’u‚ğİ’è
+            '- é–‹å§‹ä½ç½®ã‚’è¨­å®š
             At_S = At_E + Len_CrLf + 1
             
-            '- Ÿ‚ÌŠJnˆÊ’u‚ª•¶š—ñ‚ğ’´‚¦‚Ä‚¢‚éê‡,”²‚¯‚é
+            '- æ¬¡ã®é–‹å§‹ä½ç½®ãŒæ–‡å­—åˆ—ã‚’è¶…ãˆã¦ã„ã‚‹å ´åˆ,æŠœã‘ã‚‹
             If Len_Str < At_S Then Exit Do
             
-            '- ”z—ñ‚Ì—v‘f‚ğƒCƒ“ƒNƒŠƒƒ“ƒg
+            '- é…åˆ—ã®è¦ç´ ã‚’ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
             i = i + 1
             
         Loop
@@ -1292,51 +1292,51 @@ Public Function String_to_Number(Number As String) As Variant
     Dim Flg_Cur     As Boolean
     Dim Flg_Dbl     As Boolean
     
-    '+ --‚àNG
+    '+ --ã‚‚NG
     If IsNumeric(Number) = False Then Exit Function
     
-    '- ˆê’UŠi”[
+    '- ä¸€æ—¦æ ¼ç´
     T_Num = Number
     
-    '- ’l’²®
+    '- å€¤èª¿æ•´
     T_Num = Replace(T_Num, ",", "")
     
-    '- ƒ}ƒCƒiƒX”»’è
+    '- ãƒã‚¤ãƒŠã‚¹åˆ¤å®š
     If Left$(T_Num, 1) = "-" Then
         Flg_Under = True
     End If
     
-    '- 10i””»’è
+    '- 10é€²æ•°åˆ¤å®š
     If Flg_Under = False Then
         If isNumber(T_Num) = False Then Exit Function
     Else
         If isNumber(Mid$(T_Num, 2)) = False Then Exit Function
     End If
     
-    '- ”’l•”•ª‚Ì’·‚³‚ğæ“¾
+    '- æ•°å€¤éƒ¨åˆ†ã®é•·ã•ã‚’å–å¾—
     Len_Num = Len(T_Num)
     If Flg_Under = True Then
         Len_Num = Len_Num - 1
     End If
     
-    '- ƒhƒbƒgˆê’v‚ğæ“¾(¬”•””»’è—p)
+    '- ãƒ‰ãƒƒãƒˆä¸€è‡´ã‚’å–å¾—(å°æ•°éƒ¨åˆ¤å®šç”¨)
     At_Dot = InStr(1, T_Num, ".")
     
-    '- ƒhƒbƒg‚ª‚ ‚Á‚½ê‡ADblƒtƒ‰ƒO‚ğ—§‚Ä‚é
-    '+ ƒhƒbƒg‚Ì—L–³‚Å‹­§
+    '- ãƒ‰ãƒƒãƒˆãŒã‚ã£ãŸå ´åˆã€Dblãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
+    '+ ãƒ‰ãƒƒãƒˆã®æœ‰ç„¡ã§å¼·åˆ¶
     If At_Dot <> 0 Then
         Flg_Dbl = True
     End If
     
     If Flg_Dbl = True Then
-        '+ Double   :-1.79769313486232E308 ` -4.94065645841247E-324(•‰‚Ì’l)
+        '+ Double   :-1.79769313486232E308 ï½ -4.94065645841247E-324(è² ã®å€¤)
         If CStr(CDbl(T_Num)) = T_Num Then
             Val_Ret = CDbl(T_Num)
         Else
             Val_Ret = T_Num
         End If
     Else
-        '+ Long     :2,147,483,647 (®”•”:10Œ…)
+        '+ Long     :2,147,483,647 (æ•´æ•°éƒ¨:10æ¡)
         If Len_Num < 10 Then
             Val_Ret = CLng(T_Num)
         ElseIf Len_Num = 10 Then
@@ -1348,8 +1348,8 @@ Public Function String_to_Number(Number As String) As Variant
             If Len_Num < 15 Then
                 Val_Ret = CCur(T_Num)
             ElseIf Len_Num = 15 Then
-                '+ Currency :922,337,203,685,477.[5807] (®”•”:15Œ…,¬”•”:4Œ…)
-                '+ -922,337,203,685,477 ` 922,337,203,685,477
+                '+ Currency :922,337,203,685,477.[5807] (æ•´æ•°éƒ¨:15æ¡,å°æ•°éƒ¨:4æ¡)
+                '+ -922,337,203,685,477 ï½ 922,337,203,685,477
                 If Mid$(T_Num, 1 + Abs(CLng(Flg_Under)), 1) = 9 Then
                     If Flg_Under = False Then
                         If T_Num <= "922337203685477" Then

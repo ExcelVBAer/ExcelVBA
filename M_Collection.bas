@@ -1,7 +1,5 @@
-Attribute VB_Name = "M_Collection"
+﻿Attribute VB_Name = "M_Collection"
 Option Explicit
-
-
 
 Public Function Collection_to_Array(T_Colect As Collection) As Variant
     
