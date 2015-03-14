@@ -75,4 +75,5 @@
 　3-3 gitk で diff 表示が文字化けしたら、ソースファイルの文字コードに合わせて設定変更する。デフォルトはcp932(SJIS)。
 　　　$ git config --global gui.encoding utf-8
 
-	
+  3-4 ※必要であれば、ユーザー名、パスワードの入力頻度を下げる設定
+　　　$ git config --global credential.helper wincred	
