@@ -20,6 +20,13 @@ Array Functions
 - Array_Cxxx(Convert Array Type)
 Åc
 
+## M_Sort 
+Sort Functions  
+- Sort_Quick(QuickSort)
+- Sort_Bubble(BubbleSort)
+- SortByIntuitiveFileName(Sort As Explorer)
+Åc
+
 ## M_Collection 
 Collection Functions
 - Collection_to_Array
