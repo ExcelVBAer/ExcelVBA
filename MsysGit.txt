@@ -1,79 +1,79 @@
-uMsysGitv‚ÅGit‚ÉƒR[ƒh‚ğƒAƒbƒv‚·‚éˆ×‚Ìİ’è
+ï»¿ã€ŒMsysGitã€ã§Gitã«ã‚³ãƒ¼ãƒ‰ã‚’ã‚¢ãƒƒãƒ—ã™ã‚‹ç‚ºã®è¨­å®š 
 
-1.ƒCƒ“ƒXƒg[ƒ‹
+1.ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   1-1 Select Components 
-      ¨ˆÈ‰º‚Ì•K—v€–Ú‚ğƒ`ƒFƒbƒN(–³ƒ`ƒFƒbƒN‚Å‰Â)
+      â†’ä»¥ä¸‹ã®å¿…è¦é …ç›®ã‚’ãƒã‚§ãƒƒã‚¯(ç„¡ãƒã‚§ãƒƒã‚¯ã§å¯)
 
-	EAdditional icons
-	„µ In the Quick Launch
-	„¯ On the Desktop
-	¨ƒVƒ‡[ƒgƒJƒbƒgƒAƒCƒRƒ“‚ğì¬BƒfƒXƒNƒgƒbƒv‚ÆƒNƒCƒbƒN‹N“®‚ğ‘I‚×‚é
+	ãƒ»Additional icons
+	â”  In the Quick Launch
+	â”— On the Desktop
+	â†’ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆã‚¢ã‚¤ã‚³ãƒ³ã‚’ä½œæˆã€‚ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã¨ã‚¯ã‚¤ãƒƒã‚¯èµ·å‹•ã‚’é¸ã¹ã‚‹
 
-	EWindows Explorer integration
-	„µ Simple context menu (Registry based)
-	„«„µ Git Bash Here
-	„«„¯ Git GUI Here
-	„¯ Advanced context menu (git-cheetah plugin)
-	¨ ƒGƒNƒXƒvƒ[ƒ‰‚ÌƒRƒ“ƒeƒLƒXƒgƒƒjƒ…[‚ÉGitƒRƒ}ƒ“ƒhƒƒjƒ…[‚ğ’Ç‰Á‚·‚é
+	ãƒ»Windows Explorer integration
+	â”  Simple context menu (Registry based)
+	â”ƒâ”  Git Bash Here
+	â”ƒâ”— Git GUI Here
+	â”— Advanced context menu (git-cheetah plugin)
+	â†’ ã‚¨ã‚¯ã‚¹ãƒ—ãƒ­ãƒ¼ãƒ©ã®ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«Gitã‚³ãƒãƒ³ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¿½åŠ ã™ã‚‹
 
-	EAssociate .git* configuration files with the default text editor
-	¨ gitƒtƒ@ƒCƒ‹‚ğGit Bashã‚ÅÀs‚·‚é‚æ‚¤‚ÉŠÖ˜A•t‚¯‚·‚é
+	ãƒ»Associate .git* configuration files with the default text editor
+	â†’ gitãƒ•ã‚¡ã‚¤ãƒ«ã‚’Git Bashä¸Šã§å®Ÿè¡Œã™ã‚‹ã‚ˆã†ã«é–¢é€£ä»˜ã‘ã™ã‚‹
 
-	EAssociate .sh files to be run with Bash
-	¨ ƒVƒFƒ‹ƒXƒNƒŠƒvƒgƒtƒ@ƒCƒ‹‚ğGit Bashã‚ÅÀs‚·‚é‚æ‚¤‚ÉŠÖ˜A•t‚¯‚·‚é
+	ãƒ»Associate .sh files to be run with Bash
+	â†’ ã‚·ã‚§ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’Git Bashä¸Šã§å®Ÿè¡Œã™ã‚‹ã‚ˆã†ã«é–¢é€£ä»˜ã‘ã™ã‚‹
 
-	EUse a TruType font in all console windows (not only for Git Bash)
-	¨ ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚Å TrueType ƒtƒHƒ“ƒg‚ğ—˜—p‚·‚éİ’è
+	ãƒ»Use a TruType font in all console windows (not only for Git Bash)
+	â†’ ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ TrueType ãƒ•ã‚©ãƒ³ãƒˆã‚’åˆ©ç”¨ã™ã‚‹è¨­å®š
 
-  1-2 Select Start Menu Folder (ƒXƒ^[ƒgƒƒjƒ…[‚Ì‘I‘ğ)
-@ @ ¨‚»‚Ì‚Ü‚Ü[Next]
+  1-2 Select Start Menu Folder (ã‚¹ã‚¿ãƒ¼ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®é¸æŠ)
+ã€€ ã€€ â†’ãã®ã¾ã¾[Next]
 
-  1-3 Adjusting your PATH environment (ŠÂ‹«•Ï”PATH‚Ìİ’è)
-@@  ¨ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚©‚çgitƒRƒ}ƒ“ƒh‚ğg—p‚·‚é‚Ì‚ÅA2”Ô–Ú‚ğ‘I‘ğ‚µ‚ÄGitƒRƒ}ƒ“ƒh‚ÍPATH‚É’Ç‰Á‚µ‚½B
-	EUse Git Bash only
-	¨ ŠÂ‹«•Ï”PATH‚Ì•ÏX‚Í‚È‚µ
-	ERun Git from the Windows Command Prompt
-	¨ ŠÂ‹«•Ï”PATH‚ÉGIT‚ª’Ç‰Á‚³‚ê‚é
-	ERun Git and included Unix tools from the Windows Command Prompt
-	¨ Git‚ÆUnix tools‚Ì—¼•û‚ªŠÂ‹«•Ï”PATH‚É’Ç‰Á‚³‚ê‚éB
-@
-@1-4 Choosing the SSH executable (SSH‘I‘ğ)
-@@@¨uUse OpenSSHv‚ğ‘I‘ğB
+  1-3 Adjusting your PATH environment (ç’°å¢ƒå¤‰æ•°PATHã®è¨­å®š)
+ã€€ã€€  â†’ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰gitã‚³ãƒãƒ³ãƒ‰ã‚’ä½¿ç”¨ã™ã‚‹ã®ã§ã€2ç•ªç›®ã‚’é¸æŠã—ã¦Gitã‚³ãƒãƒ³ãƒ‰ã¯PATHã«è¿½åŠ ã—ãŸã€‚
+	ãƒ»Use Git Bash only
+	â†’ ç’°å¢ƒå¤‰æ•°PATHã®å¤‰æ›´ã¯ãªã—
+	ãƒ»Run Git from the Windows Command Prompt
+	â†’ ç’°å¢ƒå¤‰æ•°PATHã«GITãŒè¿½åŠ ã•ã‚Œã‚‹
+	ãƒ»Run Git and included Unix tools from the Windows Command Prompt
+	â†’ Gitã¨Unix toolsã®ä¸¡æ–¹ãŒç’°å¢ƒå¤‰æ•°PATHã«è¿½åŠ ã•ã‚Œã‚‹ã€‚
+ã€€
+ã€€1-4 Choosing the SSH executable (SSHé¸æŠ)
+ã€€ã€€ã€€â†’ã€ŒUse OpenSSHã€ã‚’é¸æŠã€‚
 
-@1-5 Configuring the line ending conversions (‰üsƒR[ƒh‚Ì•ÏŠ·‚Ì‘I‘ğ)
-@@@¨1”Ô–Ú‚ğ‘I‘ğ
-	ECheckout Windows-style, commit Unix-style line endings
-	¨ ƒ`ƒFƒbƒNƒAƒEƒg‚ÉLF‚ğCRLF‚É•ÏŠ·AƒRƒ~ƒbƒg‚ÉCRLF‚ğLF‚É•ÏŠ·B
-	Windowsã‚Å‚ÌƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ƒvƒƒWƒFƒNƒg‚Å‚Í‚±‚ê‚ª„§("core.autocrlf"‚ªtrue)B
+ã€€1-5 Configuring the line ending conversions (æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®å¤‰æ›ã®é¸æŠ)
+ã€€ã€€ã€€â†’1ç•ªç›®ã‚’é¸æŠ
+	ãƒ»Checkout Windows-style, commit Unix-style line endings
+	â†’ ãƒã‚§ãƒƒã‚¯ã‚¢ã‚¦ãƒˆæ™‚ã«LFã‚’CRLFã«å¤‰æ›ã€ã‚³ãƒŸãƒƒãƒˆæ™‚ã«CRLFã‚’LFã«å¤‰æ›ã€‚
+	Windowsä¸Šã§ã®ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ã¯ã“ã‚ŒãŒæ¨å¥¨("core.autocrlf"ãŒtrue)ã€‚
 
-	ECheckout as-is, commit Unix-style line endings
-	¨ ƒ`ƒFƒbƒNƒAƒEƒg‚Í•ÏŠ·‚È‚µAƒRƒ~ƒbƒg‚ÍCRLF‚ğLF‚É•ÏŠ·B
-	Unixã‚Å‚ÌƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€ƒvƒƒWƒFƒNƒg‚Å‚Í‚±‚ê‚ª„§("core.autocrlf"‚ªinput)B
+	ãƒ»Checkout as-is, commit Unix-style line endings
+	â†’ ãƒã‚§ãƒƒã‚¯ã‚¢ã‚¦ãƒˆæ™‚ã¯å¤‰æ›ãªã—ã€ã‚³ãƒŸãƒƒãƒˆæ™‚ã¯CRLFã‚’LFã«å¤‰æ›ã€‚
+	Unixä¸Šã§ã®ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ã¯ã“ã‚ŒãŒæ¨å¥¨("core.autocrlf"ãŒinput)ã€‚
 
-	ECheckout as-is, commit as-is
-	¨ ƒ`ƒFƒbƒNƒAƒEƒgAƒRƒ~ƒbƒg‚Æ‚à‚É‰üsƒR[ƒh‚Ì•ÏŠ·‚È‚µB
-	ƒNƒƒXƒvƒ‰ƒbƒgƒtƒH[ƒ€‚ÌƒvƒƒWƒFƒNƒg‚Å‚Í‚Å‚Í‚¨Š©‚ß‚µ‚È‚¢("core.autocrlf"‚ªfalse)B
+	ãƒ»Checkout as-is, commit as-is
+	â†’ ãƒã‚§ãƒƒã‚¯ã‚¢ã‚¦ãƒˆæ™‚ã€ã‚³ãƒŸãƒƒãƒˆæ™‚ã¨ã‚‚ã«æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®å¤‰æ›ãªã—ã€‚
+	ã‚¯ãƒ­ã‚¹ãƒ—ãƒ©ãƒƒãƒˆãƒ•ã‚©ãƒ¼ãƒ ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ã¯ã§ã¯ãŠå‹§ã‚ã—ãªã„("core.autocrlf"ãŒfalse)ã€‚
 
-  1-6 ƒXƒ^[ƒgƒƒjƒ…[‚É[Git Bash][Git GUI]‚ª’Ç‰Á‚³‚ê‚é
- @@¨œŠ®—¹
-
-
-2.ƒŒƒWƒXƒgƒŠ‚Ìİ’è(MsysGit—p)
-  uHKEY_CURRENT_USER/Console/Git Bashv‚ÌuFaceNamev‚ğuLucida Consolev‚©‚çu*MS ƒSƒVƒbƒNv‚É‘‚«Š·‚¦‚æ‚¤
+  1-6 ã‚¹ã‚¿ãƒ¼ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«[Git Bash][Git GUI]ãŒè¿½åŠ ã•ã‚Œã‚‹
+ ã€€ã€€â†’â—å®Œäº†
 
 
-3.MsysGit‚ÌBASH‚ğg—p‚µ‚ÄAˆÈ‰º‚ğİ’è
+2.ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã®è¨­å®š(MsysGitç”¨)
+  ã€ŒHKEY_CURRENT_USER/Console/Git Bashã€ã®ã€ŒFaceNameã€ã‚’ã€ŒLucida Consoleã€ã‹ã‚‰ã€Œ*MS ã‚´ã‚·ãƒƒã‚¯ã€ã«æ›¸ãæ›ãˆã‚ˆã†
 
-@3-1 Git GUI‚ªƒtƒ@ƒCƒ‹·•ª‚Æ‚©‚ğ‚µ‚Â‚±‚­Shift-JIS‚Å•\¦‚µ‚æ‚¤‚Æ‚µ‚Ä‚­‚é‚Ì‚ÅAUTF-8‚É‚·‚é‚æ‚¤İ’è‚µ‚æ‚¤B
-@@@$ git config --global gui.encoding utf-8
-@
-@3-2 git status ‚â git diff ‚È‚Ç‚Å•\¦‚³‚ê‚é“ú–{Œêƒtƒ@ƒCƒ‹–¼‚Í "\nnn" ‚ÉƒGƒXƒP[ƒv‚³‚ê‚Ä‚µ‚Ü‚Á‚Ä“Ç‚ß‚È‚¢B
-@@@ˆÈ‰º‚Ìİ’è‚ğ’Ç‰Á‚·‚é‚±‚Æ‚Å“ú–{Œêƒtƒ@ƒCƒ‹–¼‚ª•\¦‚³‚ê‚é‚æ‚¤‚É‚È‚éB
-@@@$ git config --global core.quotepath false
 
-@3-3 gitk ‚Å diff •\¦‚ª•¶š‰»‚¯‚µ‚½‚çAƒ\[ƒXƒtƒ@ƒCƒ‹‚Ì•¶šƒR[ƒh‚É‡‚í‚¹‚Äİ’è•ÏX‚·‚éBƒfƒtƒHƒ‹ƒg‚Ícp932(SJIS)B
-@@@$ git config --global gui.encoding utf-8
+3.MsysGitã®BASHã‚’ä½¿ç”¨ã—ã¦ã€ä»¥ä¸‹ã‚’è¨­å®š
 
-  3-4 ¦•K—v‚Å‚ ‚ê‚ÎAƒ†[ƒU[–¼AƒpƒXƒ[ƒh‚Ì“ü—Í•p“x‚ğ‰º‚°‚éİ’è
-@@@$ git config --global credential.helper wincred	
+ã€€3-1 Git GUIãŒãƒ•ã‚¡ã‚¤ãƒ«å·®åˆ†ã¨ã‹ã‚’ã—ã¤ã“ãShift-JISã§è¡¨ç¤ºã—ã‚ˆã†ã¨ã—ã¦ãã‚‹ã®ã§ã€UTF-8ã«ã™ã‚‹ã‚ˆã†è¨­å®šã—ã‚ˆã†ã€‚
+ã€€ã€€ã€€$ git config --global gui.encoding utf-8
+ã€€
+ã€€3-2 git status ã‚„ git diff ãªã©ã§è¡¨ç¤ºã•ã‚Œã‚‹æ—¥æœ¬èªãƒ•ã‚¡ã‚¤ãƒ«åã¯ "\nnn" ã«ã‚¨ã‚¹ã‚±ãƒ¼ãƒ—ã•ã‚Œã¦ã—ã¾ã£ã¦èª­ã‚ãªã„ã€‚
+ã€€ã€€ã€€ä»¥ä¸‹ã®è¨­å®šã‚’è¿½åŠ ã™ã‚‹ã“ã¨ã§æ—¥æœ¬èªãƒ•ã‚¡ã‚¤ãƒ«åãŒè¡¨ç¤ºã•ã‚Œã‚‹ã‚ˆã†ã«ãªã‚‹ã€‚
+ã€€ã€€ã€€$ git config --global core.quotepath false
+
+ã€€3-3 gitk ã§ diff è¡¨ç¤ºãŒæ–‡å­—åŒ–ã‘ã—ãŸã‚‰ã€ã‚½ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ã«åˆã‚ã›ã¦è¨­å®šå¤‰æ›´ã™ã‚‹ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯cp932(SJIS)ã€‚
+ã€€ã€€ã€€$ git config --global gui.encoding utf-8
+
+  3-4 â€»å¿…è¦ã§ã‚ã‚Œã°ã€ãƒ¦ãƒ¼ã‚¶ãƒ¼åã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å…¥åŠ›é »åº¦ã‚’ä¸‹ã’ã‚‹è¨­å®š
+ã€€ã€€ã€€$ git config --global credential.helper wincred
