@@ -13,9 +13,16 @@ MsysGit Manual
 ## M_Git 
 When VBA Module exported , the file convert from Shift-JIS to UTF-8
 
+## M_Array 
+Array Functions  
+- Array_Paste(Array Å® Cells.Value)
+- Array_RandomArray(For Debug)
+- Array_Cxxx(Convert Array Type)
+Åc
+
 ## M_Collection 
-Collection Functions  
-- Collection_to_Array  
+Collection Functions
+- Collection_to_Array
 
 ## M_Dictionary 
 Dictionary Functions (Reference : Microsoft Scripting Runtime)  
