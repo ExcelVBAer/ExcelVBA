@@ -1,9 +1,6 @@
 Attribute VB_Name = "M_String"
 Option Explicit
 
-'+ ŒÅ’è’·‚ÌéŒ¾
-'Dim StrFix As String * 20
-
 Public Function String_ASCII(T_String As String) As String
 'yASCII‚ğ’²‚×‚Ä•\¦z
 '
