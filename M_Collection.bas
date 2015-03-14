@@ -1,6 +1,7 @@
 Attribute VB_Name = "M_Collection"
 Option Explicit
 
+
 Public Function Collection_to_Array(T_Colect As Collection) As Variant
     
     Dim T_Dim       As Long
@@ -40,7 +41,7 @@ Public Function Collection_to_Array(T_Colect As Collection) As Variant
         
     Case 2
         
-        '- �񐔂��擾
+        '- 列数を取得
         For Each LoopItem In T_Colect
             If LoopItem Is Nothing = False Then
                 Cnt_Col2 = LoopItem.Count
