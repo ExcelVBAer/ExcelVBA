@@ -1,0 +1,78 @@
+「MsysGit」でGitにコードをアップする為の設定
+
+1.インストール
+
+  1-1 Select Components 
+      →以下の必要項目をチェック(無チェックで可)
+
+	・Additional icons
+	┠ In the Quick Launch
+	┗ On the Desktop
+	→ショートカットアイコンを作成。デスクトップとクイック起動を選べる
+
+	・Windows Explorer integration
+	┠ Simple context menu (Registry based)
+	┃┠ Git Bash Here
+	┃┗ Git GUI Here
+	┗ Advanced context menu (git-cheetah plugin)
+	→ エクスプローラのコンテキストメニューにGitコマンドメニューを追加する
+
+	・Associate .git* configuration files with the default text editor
+	→ gitファイルをGit Bash上で実行するように関連付けする
+
+	・Associate .sh files to be run with Bash
+	→ シェルスクリプトファイルをGit Bash上で実行するように関連付けする
+
+	・Use a TruType font in all console windows (not only for Git Bash)
+	→ コマンドプロンプトで TrueType フォントを利用する設定
+
+  1-2 Select Start Menu Folder (スタートメニューの選択)
+　 　 →そのまま[Next]
+
+  1-3 Adjusting your PATH environment (環境変数PATHの設定)
+　　  →コマンドラインからgitコマンドを使用するので、2番目を選択してGitコマンドはPATHに追加した。
+	・Use Git Bash only
+	→ 環境変数PATHの変更はなし
+	・Run Git from the Windows Command Prompt
+	→ 環境変数PATHにGITが追加される
+	・Run Git and included Unix tools from the Windows Command Prompt
+	→ GitとUnix toolsの両方が環境変数PATHに追加される。
+　
+　1-4 Choosing the SSH executable (SSH選択)
+　　　→「Use OpenSSH」を選択。
+
+　1-5 Configuring the line ending conversions (改行コードの変換の選択)
+　　　→1番目を選択
+	・Checkout Windows-style, commit Unix-style line endings
+	→ チェックアウト時にLFをCRLFに変換、コミット時にCRLFをLFに変換。
+	Windows上でのクロスプラットフォームプロジェクトではこれが推奨("core.autocrlf"がtrue)。
+
+	・Checkout as-is, commit Unix-style line endings
+	→ チェックアウト時は変換なし、コミット時はCRLFをLFに変換。
+	Unix上でのクロスプラットフォームプロジェクトではこれが推奨("core.autocrlf"がinput)。
+
+	・Checkout as-is, commit as-is
+	→ チェックアウト時、コミット時ともに改行コードの変換なし。
+	クロスプラットフォームのプロジェクトではではお勧めしない("core.autocrlf"がfalse)。
+
+  1-6 スタートメニューに[Git Bash][Git GUI]が追加される
+ 　　→●完了
+
+
+2.レジストリの設定(MsysGit用)
+  「HKEY_CURRENT_USER/Console/Git Bash」の「FaceName」を「Lucida Console」から「*MS ゴシック」に書き換えよう
+
+
+3.MsysGitのBASHを使用して、以下を設定
+
+　3-1 Git GUIがファイル差分とかをしつこくShift-JISで表示しようとしてくるので、UTF-8にするよう設定しよう。
+　　　$ git config --global gui.encoding utf-8
+　
+　3-2 git status や git diff などで表示される日本語ファイル名は "\nnn" にエスケープされてしまって読めない。
+　　　以下の設定を追加することで日本語ファイル名が表示されるようになる。
+　　　$ git config --global core.quotepath false
+
+　3-3 gitk で diff 表示が文字化けしたら、ソースファイルの文字コードに合わせて設定変更する。デフォルトはcp932(SJIS)。
+　　　$ git config --global gui.encoding utf-8
+
+	
