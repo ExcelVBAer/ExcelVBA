@@ -1,12 +1,13 @@
 ﻿# VBA Functions 
 Excelでシステム開発しているSEです。(東京在住)  
 少しでもVBAが広がればと思い、ライブラリの一部を公開していこうと思います。  
-
+テスト環境:Windows7(64bit) Excel2010(32bit)
 
 I'm SE of Excel VBA in Tokyo in Japan.
 
 For VBA system developers around the World , I'm opening a part of my libraries.
 
+Tested in Windows7(64bit) Excel2010(32bit).
 
 ## MsysGit.txt 
 MsysGit Manual
