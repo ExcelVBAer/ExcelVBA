@@ -1,6 +1,7 @@
-# VBA Functions 
-Excel‚ÅƒVƒXƒeƒ€ŠJ”­‚µ‚Ä‚¢‚éSE‚Å‚·B(“Œ‹İZ)  
-­‚µ‚Å‚àVBA‚ªL‚ª‚ê‚Î‚Æv‚¢Aƒ‰ƒCƒuƒ‰ƒŠ‚Ìˆê•”‚ğŒöŠJ‚µ‚Ä‚¢‚±‚¤‚Æv‚¢‚Ü‚·B  
+ï»¿# VBA Functions 
+Excelã§ã‚·ã‚¹ãƒ†ãƒ é–‹ç™ºã—ã¦ã„ã‚‹SEã§ã™ã€‚(æ±äº¬åœ¨ä½)  
+å°‘ã—ã§ã‚‚VBAãŒåºƒãŒã‚Œã°ã¨æ€ã„ã€ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ä¸€éƒ¨ã‚’å…¬é–‹ã—ã¦ã„ã“ã†ã¨æ€ã„ã¾ã™ã€‚  
+
 
 I'm SE of Excel VBA in Tokyo in Japan.
 
@@ -15,17 +16,17 @@ When VBA Module exported , the file convert from Shift-JIS to UTF-8
 
 ## M_Array 
 Array Functions  
-- Array_Paste(Array ¨ Cells.Value)
+- Array_Paste(Array â†’ Cells.Value)
 - Array_RandomArray(For Debug)
 - Array_Cxxx(Convert Array Type)
-c
+â€¦
 
 ## M_Sort 
 Sort Functions  
 - Sort_Quick(QuickSort)
 - Sort_Bubble(BubbleSort)
 - SortByIntuitiveFileName(Sort As Explorer)
-c
+â€¦
 
 ## M_Collection 
 Collection Functions
@@ -36,13 +37,13 @@ Dictionary Functions (Reference : Microsoft Scripting Runtime)
 - Dictionary_Copy
 - Dictionary_Merge
 - Dictionary_to_Array
-  c  
+  â€¦  
 
 ## M_String 
 - String_to_Number
 - String_Count (very faster than mid)
 - String_Is_xxx
-  c  
+  â€¦  
 
 ## M_Number 
 Number Converter
@@ -51,10 +52,10 @@ Number Converter
 - Math_Randmize
 - Math_Round
 - Math_Max
-  c  
+  â€¦  
 
 ## M_Date 
 - Date_DatePart
 - Date_IsDateTime
 - Date_Diff
-  c  
+  â€¦  
