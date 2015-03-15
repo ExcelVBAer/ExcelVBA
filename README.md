@@ -16,16 +16,23 @@ When VBA Module exported , the file convert from Shift-JIS to UTF-8
 
 ## M_Array 
 Array Functions  
-- Array_Paste(Array → Cells.Value)
-- Array_RandomArray(For Debug)
-- Array_Cxxx(Convert Array Type)
+- Array_Paste (Array → Cells.Value)
+- Array_RandomArray (For Debug)
+- Array_Cxxx (Convert Array Type)
 …
 
 ## M_Sort 
 Sort Functions  
-- Sort_Quick(QuickSort)
-- Sort_Bubble(BubbleSort)
-- SortByIntuitiveFileName(Sort As Explorer)
+- Sort_Quick (QuickSort)
+- Sort_Bubble (BubbleSort)
+- SortByIntuitiveFileName (Sort As Explorer)
+…
+
+## M_Is 
+Is[xxx] Functions  
+- IsAry (More flexible than normal IsArray )
+- IsNumber
+- IsDecimal
 …
 
 ## M_Collection 
@@ -41,8 +48,8 @@ Dictionary Functions (Reference : Microsoft Scripting Runtime)
 
 ## M_String 
 - String_to_Number
-- String_Count (very faster than mid)
-- String_Is_xxx
+- String_Count (very faster than using mid)
+- String_Is_xxx 
   …  
 
 ## M_Number 
