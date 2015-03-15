@@ -7,7 +7,7 @@ I'm SE of Excel VBA in Tokyo in Japan.
 
 For VBA system developers around the World , I'm opening a part of my libraries.
 
-Tested in Windows7(64bit) Excel2010(32bit).
+Tested in Windows7(64bit) Excel2010(32bit).  
 
 ## MsysGit.txt 
 MsysGitの使用マニュアル(インストール → ShiftJISで使用する方法等)  
