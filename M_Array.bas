@@ -1,6 +1,24 @@
 ﻿Attribute VB_Name = "M_Array"
 Option Explicit
 
+Private Function IsAry(Expression As Variant) As Boolean
+    
+    Dim Len_Ary     As Long
+    
+    If IsArray(Expression) = True Then
+        
+        On Error Resume Next
+        Len_Ary = UBound(Expression, 1) - LBound(Expression, 1) + 1
+        On Error GoTo 0
+        
+        If 0 < Len_Ary Then
+            IsAry = True
+        End If
+        
+    End If
+    
+End Function
+
 Public Function Array_DimCount(DataAry As Variant) As Long
 '+ 配列の次元数を取得
 
@@ -1000,96 +1018,6 @@ Public Function Array_to_String(DataAry As Variant, Optional Delimiter As String
         
 End Function
 
-Public Function Array_to_Text(DataAry As Variant, Path_Text As String, Optional Delimiter As String = ",", Optional Write_Line As Boolean = True) As Boolean
-'配列の値をCSVデータに置き換える
-    
-    Dim i           As Long
-    Dim j           As Long
-    Dim Num_Text    As Long
-    Dim LineAry()   As String
-    Dim LineStr     As String
-    Dim Flg_Write   As Boolean
-    
-    '配列に値がなかったら
-    If IsArray(DataAry) = False Then
-        
-        Call MsgBox("配列にデータがありませんでした。", vbOKOnly + vbCritical)
-        GoTo Terminate
-        
-    End If
-    
-    'ファイルを作成
-    Num_Text = File_Open_Text(Path_Text, E_OpenMode.Writes, E_ExistError.e_Alart)
-    
-    'テキストファイル作成に失敗した場合終了
-    If Num_Text < 0 Then
-        
-        Call MsgBox("ファイルの作成に失敗しました。", vbOKOnly + vbCritical)
-        GoTo Terminate
-        
-    End If
-    
-    '- 行単位で書き込む場合
-    If Write_Line = True Then
-        
-        '- 行単位のデータ格納配列を準備
-        ReDim LineAry(LBound(DataAry, 2) To UBound(DataAry, 2))
-        
-        '- 各行で
-        For i = LBound(DataAry, 1) To UBound(DataAry, 1)
-            
-            '- 行単位の各値を格納
-            For j = LBound(DataAry, 2) To UBound(DataAry, 2)
-                
-                LineAry(j) = CStr(DataAry(i, j))
-                
-            Next
-            
-            '- 行単位の文字列を作成
-            LineStr = Join(LineAry, Delimiter)
-            
-            '値の書き出し
-            Print #Num_Text, LineStr
-                    
-        Next
-        
-    '- 単語毎に書き込む場合
-    Else
-        
-        '- 各行で
-        For i = LBound(DataAry, 1) To UBound(DataAry, 1)
-            
-            '- 行単位の各値を格納
-            For j = LBound(DataAry, 2) To UBound(DataAry, 2)
-                
-                '値の書き出し(;は改行を除去）
-                Print #Num_Text, CStr(DataAry(i, j));
-                
-                'データ区切り(;は改行を除去）
-                Print #Num_Text, Delimiter;
-                
-            Next
-            
-            '改行(;を付けない空文字で改行）
-            Print #Num_Text, ""
-                
-        Next
-        
-    End If
-    
-    'テキストを閉じる
-    Close #Num_Text
-    
-    '書き込みフラグを立てる
-    Flg_Write = True
-    
-Terminate:
-    
-    '戻り値
-    Array_to_Text = Flg_Write
-        
-End Function
-
 Public Function Array_to_Dictionary(DataAry As Variant) As Scripting.Dictionary
     
     Dim T_Dim       As Long
@@ -1728,58 +1656,6 @@ Public Function Array_CountIf(DataAry As Variant, FindVal As Variant) As Long
     End Select
     
     Array_CountIf = Cnt_Find
-    
-End Function
-
-Public Function Array_Split(DataAry As Variant, Optional Delimiter As String = ",") As Variant
-    
-    Dim i               As Long
-    Dim j               As Long
-    Dim Cnt_Deli        As Long
-    Dim Cnt_Max         As Long
-    Dim SplitAry()      As String
-    Dim RetAry          As Variant
-    Dim T_Dim           As Long
-    Dim Row_L           As Long
-    Dim Row_U           As Long
-    Dim Col_L           As Long
-    Dim Col_U           As Long
-    
-    Call Array_Lbound_Ubound(DataAry, Row_L, Row_U, Col_L, Col_U)
-    
-    T_Dim = Array_DimCount(DataAry)
-    
-    Select Case T_Dim
-    
-    Case 1
-        
-        '- 区分文字列の最大数をカウント
-        For i = Row_L To Row_U
-            Cnt_Deli = String_Count(CStr(DataAry(i)), Delimiter)
-            If Cnt_Max < Cnt_Deli Then
-                Cnt_Max = Cnt_Deli
-            End If
-        Next
-        
-        '- 格納配列を調整
-        ReDim RetAry(Row_L To Row_U, 0 To Cnt_Max)
-        
-        '- Splitして格納していく
-        For i = Row_L To Row_U
-            
-            SplitAry = Split(CStr(DataAry(i)), Delimiter)
-            
-            For j = LBound(SplitAry, 1) To UBound(SplitAry, 1)
-                
-                RetAry(i, j) = SplitAry(j)
-                
-            Next
-            
-        Next
-        
-    End Select
-    
-    Array_Split = RetAry
     
 End Function
 

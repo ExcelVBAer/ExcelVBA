@@ -2,6 +2,7 @@
 Option Explicit
 
 'Reference : Microsoft Scripting Runtime
+'Reference : Microsoft ActiveX Data Objects 2.x Library
 
 Private FSO     As New Scripting.FileSystemObject
 

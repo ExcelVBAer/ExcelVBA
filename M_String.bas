@@ -822,25 +822,29 @@ End Function
 
 Public Function String_Is_Number(T_String As String) As Boolean
     
-    Dim i       As Long
-    Dim Len_Str As Long
+    Dim i           As Long
+    Dim Len_Val     As Long
+    Dim Flg_Num     As Boolean
     
-    Len_Str = Len(T_String)
-    
-    For i = 1 To Len_Str
+    If IsNumeric(T_String) = True Then
         
-        Select Case Mid$(T_String, i, 1)
+        Flg_Num = True
         
-        Case "0" To "9"
+        Len_Val = Len(CStr(T_String))
         
-        Case "０" To "９"
-        
-        Case Else
-            Exit Function
+        For i = 1 To Len_Val
             
-        End Select
+            If InStr(1, "0123456789", Mid$(T_String, i, 1), vbTextCompare) = 0 Then
+                
+                Flg_Num = False
+                
+                Exit For
+                
+            End If
+            
+        Next
         
-    Next
+    End If
     
     String_Is_Number = True
     
@@ -964,85 +968,6 @@ Public Function String_Replace1(T_String As String, Find As String, Replaces As 
 '- １回だけReplaceする
 
     String_Replace1 = Replace(T_String, Find, Replaces, 1, 1, Compare)
-    
-End Function
-
-Public Function String_Binarys_to_Texts(ByteAry() As Byte) As String()
-    
-    Dim TextAry()       As String
-    Dim i               As Long
-    Dim T_Byte          As Byte
-    Dim T_Byte1         As Byte
-    Dim T_Byte2         As Byte
-    Dim T_Hex1          As String
-    Dim T_Hex2          As String
-    Dim T_Str           As String
-    Dim Flg_Conv        As Boolean
-    Dim i1              As Long
-    Dim i2              As Long
-    Dim Len_Ary         As Long
-    
-    '- 配列が無かった場合、終了
-    On Error Resume Next
-    Len_Ary = UBound(ByteAry, 1) - LBound(ByteAry, 1) + 1
-    On Error GoTo 0
-    If Len_Ary = 0 Then Exit Function
-    
-    ReDim TextAry(LBound(ByteAry, 1) To UBound(ByteAry, 1))
-    
-    '+ 改行コードを探して、改行し、配列で格納する
-    
-    Flg_Conv = False
-    For i = LBound(ByteAry, 1) To UBound(ByteAry, 1)
-        
-        T_Byte = ByteAry(i)
-        
-        Select Case T_Byte
-            Case 0 To 127, 161 To 223 '★英数字とカナ
-                T_Str = Chr(T_Byte)
-                TextAry(i) = T_Str
-                
-            Case Else
-                If Flg_Conv = False Then
-                    Flg_Conv = True
-                    
-                    i1 = i
-                    i2 = 0
-                    T_Byte1 = T_Byte
-                    T_Byte2 = 0
-                    
-                    T_Str = Chr(T_Byte)
-                    TextAry(i) = T_Str
-                    
-                Else
-                    Flg_Conv = False
-                    
-                    i2 = i
-                    T_Byte2 = T_Byte
-                    
-                    If i1 + 1 = i2 Then
-                        
-                        T_Hex1 = Number_10_to_16(CLng(T_Byte1))
-                        T_Hex2 = Number_10_to_16(CLng(T_Byte2))
-                        
-                        T_Str = Chr(CLng("&H" & T_Hex1 & T_Hex2))
-                        
-                        TextAry(i - 1) = T_Str
-                    
-                    Else
-                        
-                        T_Str = Chr(T_Byte)
-                        TextAry(i) = T_Str
-                        
-                    End If
-                    
-                End If
-                
-        End Select
-        
-    Next
-    
-    String_Binarys_to_Texts = TextAry
     
 End Function
 
@@ -1308,9 +1233,9 @@ Public Function String_to_Number(Number As String) As Variant
     
     '- 10進数判定
     If Flg_Under = False Then
-        If isNumber(T_Num) = False Then Exit Function
+        If String_Is_Number(T_Num) = False Then Exit Function
     Else
-        If isNumber(Mid$(T_Num, 2)) = False Then Exit Function
+        If String_Is_Number(Mid$(T_Num, 2)) = False Then Exit Function
     End If
     
     '- 数値部分の長さを取得

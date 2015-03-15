@@ -158,41 +158,6 @@ Public Function Dictionary_to_Array(T_Dic As Scripting.Dictionary) As Variant
     
 End Function
 
-Public Function Dictionary_Item_Num(DataAry As Variant) As Scripting.Dictionary
-'- 配列の値のディクショナリを返す(Key:値,Item:要素数)
-'+ 前提：１次元配列
-
-    Dim i               As Long
-    Dim T_Dim           As Long
-    Dim Dic_Item_Num    As Scripting.Dictionary
-    
-    Set Dic_Item_Num = New Scripting.Dictionary
-    
-    T_Dim = Array_DimCount(DataAry)
-    
-    If T_Dim <> 1 Then Exit Function
-    
-    With Dic_Item_Num
-        
-        For i = LBound(DataAry, 1) To UBound(DataAry, 1)
-            
-            If .Exists(DataAry(i)) Then
-                
-                Call .Add(DataAry(i), i)
-                
-            End If
-            
-        Next
-        
-    End With
-    
-    '- 戻り値
-    Set Dictionary_Item_Num = Dic_Item_Num
-    
-    Set Dic_Item_Num = Nothing
-    
-End Function
-
 Public Function Dictionary_Item_Split(T_Dic As Scripting.Dictionary, Optional Delimiter As String = ",") As Scripting.Dictionary
 '+ 辞書のItemをSplitする
     
