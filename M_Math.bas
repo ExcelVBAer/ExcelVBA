@@ -1,11 +1,11 @@
-ï»¿Attribute VB_Name = "M_Math"
+Attribute VB_Name = "M_Math"
 Option Explicit
 
 Public Function Math_Round(num As Double, Optional At_Round As Long = 0) As Double
-'+ Int,Fixã¯è² æ•°ã§å°æ•°ç‚¹ä»¥ä¸‹ã®åˆ‡ã‚Šæ–¹ãŒç•°ãªã‚‹
-'+ Int:è² ï½¥ï½¥ï½¥å¸¸ã«åˆ‡ã‚Šä¸Šã’
-'+ Fix:è² ï½¥ï½¥ï½¥å¸¸ã«åˆ‡ã‚Šæ¨ã¦
-'+ ã“ã®Roudã¯ã€çµ¶å¯¾å€¤ã¨ã—ã¦å››æ¨äº”å…¥ã™ã‚‹
+'+ Int,Fix‚Í•‰”‚Å¬”“_ˆÈ‰º‚ÌØ‚è•û‚ªˆÙ‚È‚é
+'+ Int:•‰¥¥¥í‚ÉØ‚èã‚°
+'+ Fix:•‰¥¥¥í‚ÉØ‚èÌ‚Ä
+'+ ‚±‚ÌRoud‚ÍAâ‘Î’l‚Æ‚µ‚ÄlÌŒÜ“ü‚·‚é
     
     Math_Round = Application.WorksheetFunction.Round(num, At_Round)
     
@@ -24,13 +24,13 @@ Public Function Math_RoundUp(num As Double, Optional At_Round As Long = 0) As Do
 End Function
 
 Public Function Math_Floor(num As Double, RndDownUnit As Double) As Double
-'+ æŒ‡å®šã®å€¤å˜ä½ã§åˆ‡ã‚Šæ¨ã¦ã‚‹
+'+ w’è‚Ì’l’PˆÊ‚ÅØ‚èÌ‚Ä‚é
     Math_Floor = Application.WorksheetFunction.Floor(num, RndDownUnit)
     
 End Function
 
 Public Function Math_Ceiling(num As Double, RndUpUnit As Double) As Double
-'+ æŒ‡å®šã®å€¤å˜ä½ã§åˆ‡ã‚Šä¸Šã’ã‚‹
+'+ w’è‚Ì’l’PˆÊ‚ÅØ‚èã‚°‚é
     
     Math_Ceiling = Application.WorksheetFunction.Ceiling(num, RndUpUnit)
     
@@ -75,7 +75,7 @@ Public Function Math_Min(ParamArray Vals()) As Double
 End Function
 
 Public Function Math_Abs(num As Variant) As Variant
-'+ çµ¶å¯¾å€¤
+'+ â‘Î’l
 
     If IsNumeric(num) = False Then Exit Function
     
@@ -84,7 +84,7 @@ Public Function Math_Abs(num As Variant) As Variant
 End Function
 
 Public Function Math_Sgn(num As Variant) As Long
-'+ ç¬¦å·åˆ¤å®š(æ­£ï¼š1ã€è² ï¼š-1ã€0ï¼š0)
+'+ •„†”»’è(³F1A•‰F-1A0F0)
     
     If IsNumeric(num) = False Then Exit Function
     
@@ -93,7 +93,7 @@ Public Function Math_Sgn(num As Variant) As Long
 End Function
 
 Public Function Math_Exp(num As Double) As Double
-'+ eã‚’åº•ã¨ã™ã‚‹æ•°å¼ã®ã¹ãä¹—ï¼ˆæŒ‡æ•°é–¢æ•°ï¼‰ã‚’è¨ˆç®—ã—ã¾ã™
+'+ e‚ğ’ê‚Æ‚·‚é”®‚Ì‚×‚«æiw”ŠÖ”j‚ğŒvZ‚µ‚Ü‚·
     
     If 709 < num Then Exit Function
     
@@ -120,42 +120,42 @@ Public Function Math_Randmize()
 End Function
 
 Public Function Math_Pow(Num1 As Double, Num2 As Double) As Double
-'+ ã¹ãä¹—
+'+ ‚×‚«æ
     
     Math_Pow = Application.WorksheetFunction.Power(Num1, Num2)
     
 End Function
 
 Public Function Math_Sqr(num As Double) As Double
-'+ å¹³æ–¹æ ¹
+'+ •½•ûª
     
     Math_Sqr = Math.Sqr(num)
     
 End Function
 
 Public Function Math_Sin(num As Double) As Double
-'+ ã‚µã‚¤ãƒ³
+'+ ƒTƒCƒ“
     
     Math_Sin = Math.Sin(num)
     
 End Function
 
 Public Function Math_Cos(num As Double) As Double
-'+ ã‚³ã‚µã‚¤ãƒ³
+'+ ƒRƒTƒCƒ“
     
     Math_Cos = Math.Cos(num)
     
 End Function
 
 Public Function Math_Tan(num As Double) As Double
-'+ ã‚¿ãƒ³ã‚¸ã‚§ãƒ³ãƒˆ
+'+ ƒ^ƒ“ƒWƒFƒ“ƒg
     
     Math_Tan = Math.Tan(num)
     
 End Function
 
 Public Function Math_Quotient_Max(Num1 As Double, Num2 As Double) As Double
-'+ é™¤ç®—ã®æœ€å¤§å€¤ã‚’è¿”ã™
+'+ œZ‚ÌÅ‘å’l‚ğ•Ô‚·
     
     Dim Num_Quo     As Long
     Dim Num_Mod     As Long
@@ -179,7 +179,7 @@ Public Function Math_Quotient_Max(Num1 As Double, Num2 As Double) As Double
 End Function
 
 Public Function Math_GCD(Num1 As Double, Num2 As Double) As Double
-'+ æœ€å¤§å…¬ç´„æ•°
+'+ Å‘åŒö–ñ”
     
     Dim Num_Mod     As Double
     Dim Mod_Max     As Double

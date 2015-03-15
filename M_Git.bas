@@ -1,4 +1,4 @@
-ï»¿Attribute VB_Name = "M_Git"
+Attribute VB_Name = "M_Git"
 Option Explicit
 
 'Reference : Microsoft Scripting Runtime
@@ -19,7 +19,7 @@ Public Function Git_ConvertUTF8()
     Dim T_File          As File
     Dim Path_File       As String
     
-    Path_Repository = "H:\00_VBA\04_è‰²ã€…\ExcelVBA\"
+    Path_Repository = "H:\00_VBA\04_FX\ExcelVBA\"
     
     If FSO.FolderExists(Path_Repository) = False Then Exit Function
     
@@ -56,13 +56,13 @@ Private Function ShiftJIS_to_UTF8(File As String)
         
         If T_Type <> UTF8 Then
             
-            '- utf-8ã®å™¨ã‚’ä½œã£ã¦ãŠã
+            '- utf-8‚ÌŠí‚ğì‚Á‚Ä‚¨‚­
             .Type = adTypeText
             .Charset = T_Char_UTF8
             .Open
             .Position = 0
             
-            ' ãƒ•ã‚¡ã‚¤ãƒ«ã‚’S-JIS ã§é–‹ã„ã¦ã‚»ãƒƒãƒˆ
+            ' ƒtƒ@ƒCƒ‹‚ğS-JIS ‚ÅŠJ‚¢‚ÄƒZƒbƒg
             T_Char = File_BOM_Type_to_Name(T_Type)
             Dim TempStream  As ADODB.Stream
             Set TempStream = New ADODB.Stream
@@ -75,11 +75,11 @@ Private Function ShiftJIS_to_UTF8(File As String)
                 .Close
             End With
             
-            '- ä½ç½®ã‚’é ­ã«ç§»å‹•ã•ã›ã¦ãŠã
-            '+ Copyå¾Œã§ä¸‹ã«ãªã£ã¦ã„ã‚‹ã®ã§ã€ãã®ã¾ã¾ä¿å­˜ã—ã‚ˆã†ã¨ã™ã‚‹ã¨ç©ºã®ãƒ†ã‚­ã‚¹ãƒˆã«ãªã£ã¦ã—ã¾ã†
+            '- ˆÊ’u‚ğ“ª‚ÉˆÚ“®‚³‚¹‚Ä‚¨‚­
+            '+ CopyŒã‚Å‰º‚É‚È‚Á‚Ä‚¢‚é‚Ì‚ÅA‚»‚Ì‚Ü‚Ü•Û‘¶‚µ‚æ‚¤‚Æ‚·‚é‚Æ‹ó‚ÌƒeƒLƒXƒg‚É‚È‚Á‚Ä‚µ‚Ü‚¤
             .Position = 0
             
-            '- UTF8ã§ä¿å­˜
+            '- UTF8‚Å•Û‘¶
             Dim dest  As ADODB.Stream
             Set dest = New ADODB.Stream
             With dest
@@ -94,8 +94,8 @@ Private Function ShiftJIS_to_UTF8(File As String)
             
         End If
         
-'        '- BOMæ¶ˆå»
-'        '+ BOMãŒç„¡ã„ã¨ShiftJISâ†’UTF8ãŒå†åº¦ç¹°ã‚Šè¿”ã•ã‚Œã€ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ãŒãŠã‹ã—ããªã‚‹ã®ã§BOMã¯æ®‹ã—ã¦ãŠã
+'        '- BOMÁ‹
+'        '+ BOM‚ª–³‚¢‚ÆShiftJIS¨UTF8‚ªÄ“xŒJ‚è•Ô‚³‚êAƒGƒ“ƒR[ƒh‚ª‚¨‚©‚µ‚­‚È‚é‚Ì‚ÅBOM‚Íc‚µ‚Ä‚¨‚­
 '        Call File_BOM_Delete(File)
         
     End With
@@ -131,7 +131,7 @@ Public Function File_BOM_Delete(File As String)
     
     Set C_Stream = New ADODB.Stream
     
-    ' BOMæ¶ˆå»
+    ' BOMÁ‹
     With C_Stream
         
         Cnt_Bom = File_BOM_Count(File)
@@ -178,11 +178,11 @@ Private Function File_BOM_from_File(File As String) As String()
         
     With C_Stream
         
-        '- BOMã®æœ‰ç„¡ã‚’ç¢ºèª
+        '- BOM‚Ì—L–³‚ğŠm”F
         .Type = adTypeBinary
         .Open
         Call .LoadFromFile(File)
-        .Position = 0 'èª­è¾¼é–‹å§‹ä½ç½®
+        .Position = 0 '“ÇŠJnˆÊ’u
         On Error Resume Next
         Head1 = UCase(Right("0" & Hex(AscB(.Read(1))), 2))
         Head2 = UCase(Right("0" & Hex(AscB(.Read(1))), 2))
@@ -259,7 +259,7 @@ Private Function File_BOM_to_EncodeType(Head1 As String, Head2 As String, Head3 
         
         T_Type = UTF8
         
-    'BOMç„¡ã—
+    'BOM–³‚µ
     Else
         T_Type = Unknown
         

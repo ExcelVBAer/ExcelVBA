@@ -1,4 +1,4 @@
-ï»¿Attribute VB_Name = "M_Sort"
+Attribute VB_Name = "M_Sort"
 Option Explicit
 
 Declare Function StrCmpLogicalW Lib "SHLWAPI.DLL" (ByVal lpStr1 As String, ByVal lpStr2 As String) As Long
@@ -48,7 +48,7 @@ Public Function Sort_Quick(SortAry As Variant) As Variant
     At_Min = LBound(SortAry, 1)
     At_Max = UBound(SortAry, 1)
     
-    '- å¯¾è±¡ã®é…åˆ—ãŒæ•°å€¤ã‹åˆ¤å®š
+    '- ‘ÎÛ‚Ì”z—ñ‚ª”’l‚©”»’è
     Flg_IsNumeric = True
     For i = At_Min To At_Max
         If IsNumeric(SortAry(i)) = False Then
@@ -57,20 +57,20 @@ Public Function Sort_Quick(SortAry As Variant) As Variant
         End If
     Next
     
-    '- ã‚¯ã‚¤ãƒƒã‚¯ã‚½ãƒ¼ãƒˆå®Ÿè¡Œçµæœã‚’é…åˆ—ã«æ ¼ç´
+    '- ƒNƒCƒbƒNƒ\[ƒgÀsŒ‹‰Ê‚ğ”z—ñ‚ÉŠi”[
     If Flg_IsNumeric = True Then
-        '+ æ•°å€¤å°‚ç”¨
+        '+ ”’lê—p
         Call QuickSort_Num(SortAry, At_Min, At_Max)
     Else
-        '+ å…¨å€¤
+        '+ ‘S’l
         Call QuickSort_Variant(SortAry, At_Min, At_Max)
     End If
     
 End Function
 
 Private Function QuickSort_Num(SortAry As Variant, ByVal At_Min As Long, ByVal At_Max As Long)
-'+ é…åˆ—ã¯ä¸€æ¬¡å…ƒ
-'+  å›å¸°å‡¦ç†
+'+ ”z—ñ‚ÍˆêŸŒ³
+'+  ‰ñ‹Aˆ—
 
     Dim At_Mid          As Long
     Dim Val_Mid         As Double
@@ -78,15 +78,15 @@ Private Function QuickSort_Num(SortAry As Variant, ByVal At_Min As Long, ByVal A
     Dim At_Temp         As Long
     Dim Val_Temp        As Double
     
-    '- å·¦ã®å€¤ãŒå³ã®å€¤ã‚’è¶…ãˆãŸå ´åˆçµ‚äº†
+    '- ¶‚Ì’l‚ª‰E‚Ì’l‚ğ’´‚¦‚½ê‡I—¹
     If At_Min >= At_Max Then Exit Function
     
-    '- ä¸­å¤®ã®ä½ç½®ã‚’ç®—å‡ºã—ã¦ãƒ”ãƒœãƒƒãƒˆã‚’è¨­å®š
+    '- ’†‰›‚ÌˆÊ’u‚ğZo‚µ‚Äƒsƒ{ƒbƒg‚ğİ’è
     At_Mid = (At_Max + At_Min) \ 2
     
     Val_Mid = SortAry(At_Mid)
     
-    '- é–‹å§‹ä½ç½®è¦ç´ ã‚’ä¸­å¤®ã«ã‚»ãƒƒãƒˆ
+    '- ŠJnˆÊ’u—v‘f‚ğ’†‰›‚ÉƒZƒbƒg
     SortAry(At_Mid) = SortAry(At_Min)
     
     At_Temp = At_Min
@@ -96,7 +96,7 @@ Private Function QuickSort_Num(SortAry As Variant, ByVal At_Min As Long, ByVal A
         
         If SortAry(At_Next) < Val_Mid Then
             
-            '- å€¤ãŒ ã‚ˆã‚Šå°ã•ã„å ´åˆã€åŸºæº–å€¤ã‚’å…¥ã‚Œæ›¿ãˆã‚‹
+            '- ’l‚ª ‚æ‚è¬‚³‚¢ê‡AŠî€’l‚ğ“ü‚ê‘Ö‚¦‚é
             At_Temp = At_Temp + 1
             Val_Temp = SortAry(At_Temp)
             SortAry(At_Temp) = SortAry(At_Next)
@@ -106,24 +106,24 @@ Private Function QuickSort_Num(SortAry As Variant, ByVal At_Min As Long, ByVal A
         At_Next = At_Next + 1
     Loop
     
-    '- å…¥ã‚Œæ›¿ãˆãŸå€¤ã‚’é–‹å§‹ä½ç½®ã«ã‚»ãƒƒãƒˆã—ã€
-    '- åˆ¥ã®å¤‰æ•°ã«ç¢ºä¿ã—ã¦ã„ãŸå€¤ã‚’æœ€å¾Œã«å…¥ã‚Œæ›¿ãˆãŸä½ç½®ã«ã‚»ãƒƒãƒˆ
+    '- “ü‚ê‘Ö‚¦‚½’l‚ğŠJnˆÊ’u‚ÉƒZƒbƒg‚µA
+    '- •Ê‚Ì•Ï”‚ÉŠm•Û‚µ‚Ä‚¢‚½’l‚ğÅŒã‚É“ü‚ê‘Ö‚¦‚½ˆÊ’u‚ÉƒZƒbƒg
     SortAry(At_Min) = SortAry(At_Temp)
     SortAry(At_Temp) = Val_Mid
     
     '---------------------------------------------------------------------------
     
-    ' åˆ†å‰²å‰åŠã‚’å†å¸°å‘¼ã³å‡ºã—ã§SORT
+    ' •ªŠ„‘O”¼‚ğÄ‹AŒÄ‚Ño‚µ‚ÅSORT
     Call QuickSort_Num(SortAry, At_Min, At_Temp - 1)
     '---------------------------------------------------------------------------
-    ' åˆ†å‰²å¾ŒåŠã‚’å†å¸°å‘¼ã³å‡ºã—ã§SORT
+    ' •ªŠ„Œã”¼‚ğÄ‹AŒÄ‚Ño‚µ‚ÅSORT
     Call QuickSort_Num(SortAry, At_Temp + 1, At_Max)
     
 End Function
 
 Private Function QuickSort_Variant(SortAry As Variant, ByVal At_Min As Long, ByVal At_Max As Long)
-'+ é…åˆ—ã¯ä¸€æ¬¡å…ƒ
-'+  å›å¸°å‡¦ç†
+'+ ”z—ñ‚ÍˆêŸŒ³
+'+  ‰ñ‹Aˆ—
 
     Dim At_Mid          As Long
     Dim Val_Mid         As Variant
@@ -131,15 +131,15 @@ Private Function QuickSort_Variant(SortAry As Variant, ByVal At_Min As Long, ByV
     Dim At_Temp         As Long
     Dim Val_Temp        As Variant
     
-    '- å·¦ã®å€¤ãŒå³ã®å€¤ã‚’è¶…ãˆãŸå ´åˆçµ‚äº†
+    '- ¶‚Ì’l‚ª‰E‚Ì’l‚ğ’´‚¦‚½ê‡I—¹
     If At_Min >= At_Max Then Exit Function
     
-    '- ä¸­å¤®ã®ä½ç½®ã‚’ç®—å‡ºã—ã¦ãƒ”ãƒœãƒƒãƒˆã‚’è¨­å®š
+    '- ’†‰›‚ÌˆÊ’u‚ğZo‚µ‚Äƒsƒ{ƒbƒg‚ğİ’è
     At_Mid = (At_Max + At_Min) \ 2
     
     Val_Mid = SortAry(At_Mid)
     
-    '- é–‹å§‹ä½ç½®è¦ç´ ã‚’ä¸­å¤®ã«ã‚»ãƒƒãƒˆ
+    '- ŠJnˆÊ’u—v‘f‚ğ’†‰›‚ÉƒZƒbƒg
     SortAry(At_Mid) = SortAry(At_Min)
     
     At_Temp = At_Min
@@ -149,7 +149,7 @@ Private Function QuickSort_Variant(SortAry As Variant, ByVal At_Min As Long, ByV
         
         If CStr(SortAry(At_Next)) < CStr(Val_Mid) Then
             
-            '- å€¤ãŒã‚ˆã‚Šå°ã•ã„å ´åˆã€åŸºæº–å€¤ã‚’å…¥ã‚Œæ›¿ãˆã‚‹
+            '- ’l‚ª‚æ‚è¬‚³‚¢ê‡AŠî€’l‚ğ“ü‚ê‘Ö‚¦‚é
             At_Temp = At_Temp + 1
             Val_Temp = SortAry(At_Temp)
             SortAry(At_Temp) = SortAry(At_Next)
@@ -159,17 +159,17 @@ Private Function QuickSort_Variant(SortAry As Variant, ByVal At_Min As Long, ByV
         At_Next = At_Next + 1
     Loop
     
-    '- å…¥ã‚Œæ›¿ãˆãŸå€¤ã‚’é–‹å§‹ä½ç½®ã«ã‚»ãƒƒãƒˆã—ã€
-    '- åˆ¥ã®å¤‰æ•°ã«ç¢ºä¿ã—ã¦ã„ãŸå€¤ã‚’æœ€å¾Œã«å…¥ã‚Œæ›¿ãˆãŸä½ç½®ã«ã‚»ãƒƒãƒˆ
+    '- “ü‚ê‘Ö‚¦‚½’l‚ğŠJnˆÊ’u‚ÉƒZƒbƒg‚µA
+    '- •Ê‚Ì•Ï”‚ÉŠm•Û‚µ‚Ä‚¢‚½’l‚ğÅŒã‚É“ü‚ê‘Ö‚¦‚½ˆÊ’u‚ÉƒZƒbƒg
     SortAry(At_Min) = SortAry(At_Temp)
     SortAry(At_Temp) = Val_Mid
     
     '---------------------------------------------------------------------------
     
-    ' åˆ†å‰²å‰åŠã‚’å†å¸°å‘¼ã³å‡ºã—ã§SORT
+    ' •ªŠ„‘O”¼‚ğÄ‹AŒÄ‚Ño‚µ‚ÅSORT
     Call QuickSort_Variant(SortAry, At_Min, At_Temp - 1)
     '---------------------------------------------------------------------------
-    ' åˆ†å‰²å¾ŒåŠã‚’å†å¸°å‘¼ã³å‡ºã—ã§SORT
+    ' •ªŠ„Œã”¼‚ğÄ‹AŒÄ‚Ño‚µ‚ÅSORT
     Call QuickSort_Variant(SortAry, At_Temp + 1, At_Max)
     
 End Function
@@ -177,7 +177,7 @@ End Function
 Public Function Sort_Bubble(ArrayValue As Variant, _
                             Optional CaseNo As Long = 1, _
                             Optional Target_Col As Long = 0) As Variant
-    'ãƒãƒ–ãƒ«ã‚½ãƒ¼ãƒˆã‚’å®Ÿè¡Œ
+    'ƒoƒuƒ‹ƒ\[ƒg‚ğÀs
     
     Dim i                   As Long
     Dim j                   As Long
@@ -190,7 +190,7 @@ Public Function Sort_Bubble(ArrayValue As Variant, _
     S_Row = LBound(ArrayValue, 1)
     E_Row = UBound(ArrayValue, 1)
     
-    'è¡Œã®èª¿æ•´
+    's‚Ì’²®
     If Target_Col = 0 Then
         Target_Col = LBound(ArrayValue, 2)
     End If
@@ -199,7 +199,7 @@ Public Function Sort_Bubble(ArrayValue As Variant, _
         For i = S_Row To k
             j = i + 1
                         
-            'æ˜‡é †(CaseNo=1)
+            '¸‡(CaseNo=1)
             If CaseNo = 1 Then
                 If ArrayValue(i, Target_Col) > ArrayValue(j, Target_Col) Then
                     
@@ -210,7 +210,7 @@ Public Function Sort_Bubble(ArrayValue As Variant, _
                     Next
                     
                 End If
-            'é™é †
+            '~‡
             Else
                 If ArrayValue(i, Target_Col) < ArrayValue(j, Target_Col) Then
                 
@@ -235,7 +235,7 @@ Private Function QuicktSort_Str_Down(StrAry() As String, At_Min As Long, At_Max 
     Dim i           As Long
     Dim j           As Long
     
-    'å·¦ç«¯ã¨å³ç«¯ãŒä¸€è‡´ã—ã¦ã„ãŸãªã‚‰ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã‚’æŠœã‘ã‚‹
+    '¶’[‚Æ‰E’[‚ªˆê’v‚µ‚Ä‚¢‚½‚È‚çƒvƒƒV[ƒWƒƒ‚ğ”²‚¯‚é
     If At_Min >= At_Max Then Exit Function
     
     i = At_Min + 1
@@ -283,7 +283,7 @@ Private Function QuickSort_Str_Up(StrAry() As String, At_Min As Long, At_Max As 
     Dim i           As Long
     Dim j           As Long
     
-    'å·¦ç«¯ã¨å³ç«¯ãŒä¸€è‡´ã—ã¦ã„ãŸãªã‚‰ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã‚’æŠœã‘ã‚‹
+    '¶’[‚Æ‰E’[‚ªˆê’v‚µ‚Ä‚¢‚½‚È‚çƒvƒƒV[ƒWƒƒ‚ğ”²‚¯‚é
     If At_Min >= At_Max Then Exit Function
     
     i = At_Min + 1

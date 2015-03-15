@@ -1,4 +1,4 @@
-ï»¿Attribute VB_Name = "M_Date"
+Attribute VB_Name = "M_Date"
 Option Explicit
 
 Public Enum E_Date
@@ -12,9 +12,9 @@ Public Enum E_Date
 End Enum
 
 Public Enum E_Round
-    Up      '+ åˆ‡ã‚Šä¸Šã’
-    Down    '+ åˆ‡ã‚Šæ¨ã¦
-    UpDown  '+ å››æ¨äº”å…¥
+    Up      '+ Ø‚èã‚°
+    Down    '+ Ø‚èÌ‚Ä
+    UpDown  '+ lÌŒÜ“ü
 End Enum
 
 Public Function Date_Day_First(T_Date As Date, Optional Add_Month As Long = 0) As Date
@@ -64,7 +64,7 @@ Public Function Date_DatePart(Optional Year As Long = 2000, Optional Month As Lo
     
     Date_Ret = DateSerial(T_Year, T_Month, T_Day)
     
-    '- å…¨å¹´æœˆæ—¥ã‚’èª¿æ•´ã—ãŸæ—¥ä»˜ã‚’è¿”ã™
+    '- ‘S”NŒ“ú‚ğ’²®‚µ‚½“ú•t‚ğ•Ô‚·
     Date_DatePart = Date_Ret
     
 End Function
@@ -80,21 +80,21 @@ Public Function Date_TimePart(Optional Hour As Long = 0, Optional Minute As Long
     Dim R_Hour      As Long
     Dim Date_Ret    As Date
     
-    '- æ™‚åˆ†ç§’ã‚’æ—¥æ™‚åˆ†ç§’æ›ç®—ã§ãã‚Œãã‚Œé›†è¨ˆ
+    '- •ª•b‚ğ“ú•ª•bŠ·Z‚Å‚»‚ê‚¼‚êWŒv
     T_Second = Second
     T_Minute = Minute + Date_Second_to_Minute(T_Second)
     T_Hour = Hour + Date_Minute_to_Hour(T_Minute)
     T_Day = Date_Hour_to_Day(T_Hour)
     
-    '- æ™‚åˆ†ç§’ã®å„å€¤ã‚’å–å¾—
+    '- •ª•b‚ÌŠe’l‚ğæ“¾
     R_Hour = T_Hour Mod 24
     R_Minute = T_Minute Mod 60
     R_Second = T_Second Mod 60
     
-    '- æ™‚åˆ†ç§’ã‚’å–å¾—
+    '- •ª•b‚ğæ“¾
     Date_Ret = TimeSerial(R_Hour, R_Minute, R_Second)
     
-    '- æ—¥ã‚’è¿½åŠ 
+    '- “ú‚ğ’Ç‰Á
     Date_Ret = DateAdd("d", T_Day, Date_Ret)
     
     Date_TimePart = Date_Ret
@@ -103,10 +103,10 @@ End Function
 
 Public Function Date_Add(T_Date As Date, Optional Year As Long = 0, Optional Month As Long = 0, Optional Day As Long = 0, _
                          Optional Week As Long = 0, Optional Hour As Long = 0, Optional Minute As Long = 0, Optional Second As Long = 0) As Date
-'+ ã€ä»¥ä¸‹æ³¨æ„ã€‘
-'+ â€»ã†ã‚‹ã†å¹´ã®å ´åˆï¼šDateAddã§ã¯2/29â†’(å¹´ã‚’åŠ oræ¸›)â†’2/28ã€€ã¨ãªã‚‹
-'+ â€»ã†ã‚‹ã†å¹´ã®å ´åˆï¼šDateé–¢æ•°ã§ã¯2/29â†’(å¹´ã‚’åŠ oræ¸›)â†’3/1ã€€ã¨ãªã‚‹
-'+ â€»ã†ã‚‹ã†å¹´ã®å ´åˆï¼šDateSerialã§ã¯2/29â†’(å¹´ã‚’åŠ oræ¸›)â†’3/1ã€€ã¨ãªã‚‹
+'+ yˆÈ‰º’ˆÓz
+'+ ¦‚¤‚é‚¤”N‚Ìê‡FDateAdd‚Å‚Í2/29¨(”N‚ğ‰ÁorŒ¸)¨2/28@‚Æ‚È‚é
+'+ ¦‚¤‚é‚¤”N‚Ìê‡FDateŠÖ”‚Å‚Í2/29¨(”N‚ğ‰ÁorŒ¸)¨3/1@‚Æ‚È‚é
+'+ ¦‚¤‚é‚¤”N‚Ìê‡FDateSerial‚Å‚Í2/29¨(”N‚ğ‰ÁorŒ¸)¨3/1@‚Æ‚È‚é
     
     Dim Date_Ret    As Date
     
@@ -151,7 +151,7 @@ Public Function Date_Diff(DateType As E_Date, Date1 As Date, Date2 As Date) As L
     
     DateStr = DateType_Code_to_String(DateType)
     
-    '+ ã‚ªãƒ¼ãƒãƒ¼ãƒ•ãƒ­ãƒ¼ã«å¯¾å¿œ
+    '+ ƒI[ƒo[ƒtƒ[‚É‘Î‰
 On Error GoTo Err
     
     T_Diff = DateDiff(DateStr, Date1, Date2)
@@ -573,22 +573,22 @@ Public Function Date_IsTime_HourMinute(Expression As Variant) As Boolean
 End Function
 
 Public Function Date_IsTime_HourMinute_Lite(Expression As Variant) As Boolean
-'+ Dateå‹ã«æ™‚åˆ»ã‚’æ ¼ç´å¯èƒ½ã¨åˆ¤å®š
-'+ 12/1,12.1ã§ã‚‚å‡¦ç†ã¯ã•ã‚Œã¦ã—ã¾ã†ã®ã§ã€æ³¨æ„ãŒå¿…è¦
+'+ DateŒ^‚É‚ğŠi”[‰Â”\‚Æ”»’è
+'+ 12/1,12.1‚Å‚àˆ—‚Í‚³‚ê‚Ä‚µ‚Ü‚¤‚Ì‚ÅA’ˆÓ‚ª•K—v
     
     Dim T_Time      As Date
     Dim Flg_Time    As Boolean
     
-    '- åˆ¤å®šåˆæœŸåŒ–ï¼šTrue
+    '- ”»’è‰Šú‰»FTrue
     Flg_Time = True
     
-    '- æ™‚åˆ»ã¨ã—ã¦å–å¾—ã—ã¦ã¿ã‚‹
+    '- ‚Æ‚µ‚Äæ“¾‚µ‚Ä‚İ‚é
     T_Time = -1
     On Error Resume Next
     T_Time = TimeValue(Expression)
     On Error GoTo 0
     
-    '- å–å¾—ã§ããªã‹ã£ãŸå ´åˆã€ã‚¨ãƒ©ãƒ¼
+    '- æ“¾‚Å‚«‚È‚©‚Á‚½ê‡AƒGƒ‰[
     If T_Time = -1 Then
         Flg_Time = False
     End If
@@ -635,27 +635,27 @@ Public Function Date_IsTime_MinuteSecond(Expression As Variant) As Boolean
 End Function
 
 Private Function IsNumber(Expression As Variant) As Boolean
-'+ å¯¾è±¡ãŒæ•°å­—ã‹åˆ¤å®š
+'+ ‘ÎÛ‚ª”š‚©”»’è
     
     Dim i           As Long
     Dim Len_Val     As Long
     Dim Flg_Num     As Boolean
     
-    '- æ•°å€¤ã¨è¦‹ãªã›ã‚‹å ´åˆ
+    '- ”’l‚ÆŒ©‚È‚¹‚éê‡
     If IsNumeric(Expression) = True Then
         
-        '- ãƒ•ãƒ©ã‚°åˆæœŸåŒ–
+        '- ƒtƒ‰ƒO‰Šú‰»
         Flg_Num = True
         
-        '- é•·ã•ã‚’å–å¾—
+        '- ’·‚³‚ğæ“¾
         Len_Val = Len(CStr(Expression))
         
-        '- å„æ–‡å­—æ¯ã«ã€æ•°å­—ã‹ã©ã†ã‹åˆ¤å®šã—ã€
+        '- Še•¶š–ˆ‚ÉA”š‚©‚Ç‚¤‚©”»’è‚µA
         For i = 1 To Len_Val
             
             If InStr(1, "0123456789", Mid$(Expression, i, 1), vbTextCompare) = 0 Then
                 
-                '- æ•°å­—ä»¥å¤–ãŒå«ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãƒ•ãƒ©ã‚°ã‚’ä¸‹ã’ã¦æŠœã‘ã‚‹
+                '- ”šˆÈŠO‚ªŠÜ‚Ü‚ê‚Ä‚¢‚½ê‡Aƒtƒ‰ƒO‚ğ‰º‚°‚Ä”²‚¯‚é
                 Flg_Num = False
                 
                 Exit For

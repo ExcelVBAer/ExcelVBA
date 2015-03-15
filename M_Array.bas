@@ -1,4 +1,4 @@
-ï»¿Attribute VB_Name = "M_Array"
+Attribute VB_Name = "M_Array"
 Option Explicit
 
 Private Function IsAry(Expression As Variant) As Boolean
@@ -20,7 +20,7 @@ Private Function IsAry(Expression As Variant) As Boolean
 End Function
 
 Public Function Array_DimCount(DataAry As Variant) As Long
-'+ é…åˆ—ã®æ¬¡å…ƒæ•°ã‚’å–å¾—
+'+ ”z—ñ‚ÌŸŒ³”‚ğæ“¾
 
     Dim T_Base      As Long
     Dim T_Dim       As Long
@@ -60,19 +60,19 @@ Public Function Array_Lbound_Ubound(DataAry As Variant, Optional Row_L As Long, 
 End Function
 
 Public Function Array_Paste(T_Range As Range, DataAry As Variant)
-'+ T_Rangeã‚’åŸºç‚¹ã«é…åˆ—ã‚’è²¼ã‚Šä»˜ã‘ã‚‹
+'+ T_Range‚ğŠî“_‚É”z—ñ‚ğ“\‚è•t‚¯‚é
     
     Dim Row_Paste       As Long
     Dim Col_Paste       As Long
     Dim T_Dim     As Long
     
-    '- é…åˆ—ä»¥å¤–ã¯çµ‚äº†
+    '- ”z—ñˆÈŠO‚ÍI—¹
     If IsArray(DataAry) = False Then Exit Function
     
-    '- é…åˆ—ã®æ¬¡å…ƒæ•°ã‚’å–å¾—
+    '- ”z—ñ‚ÌŸŒ³”‚ğæ“¾
     T_Dim = Array_DimCount(DataAry)
     
-    '- é…åˆ—ã®è¡Œãƒ»åˆ—æ•°ã‚’å–å¾—
+    '- ”z—ñ‚ÌsE—ñ”‚ğæ“¾
     Select Case T_Dim
         
         Case 1
@@ -87,7 +87,7 @@ Public Function Array_Paste(T_Range As Range, DataAry As Variant)
         
     End Select
     
-    'é…åˆ—ã®è²¼ä»˜ã‘
+    '”z—ñ‚Ì“\•t‚¯
     T_Range.Resize(Row_Paste, Col_Paste).Value = DataAry
     
 End Function
@@ -105,14 +105,14 @@ Public Function Array_RandomArray(Dimention As Long, _
     Dim Base_Num        As Long
     Dim T_Size          As Long
     
-    'é…åˆ—ã®å§‹ã¾ã‚‹å ´æ‰€ã‚’æ±ºå®š
+    '”z—ñ‚Ìn‚Ü‚éêŠ‚ğŒˆ’è
     If Base0 = False Then
         Base_Num = 1
     Else
         Base_Num = 0
     End If
     
-    'ãƒ©ãƒ³ãƒ€ãƒ æ•°ã®æ¡æ•°ã‚’æ±ºå®š
+    'ƒ‰ƒ“ƒ_ƒ€”‚ÌŒ…”‚ğŒˆ’è
     T_Size = RandomSize
     If T_Size <> 1000 Then
         T_Size = 10 ^ CLng((Len(CStr(T_Size)) - 1))
@@ -124,10 +124,10 @@ Public Function Array_RandomArray(Dimention As Long, _
         
         If Row_End < Base_Num Then Exit Function
         
-        'ãƒ©ãƒ³ãƒ€ãƒ æ•°ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã‚’è¨­å®š
+        'ƒ‰ƒ“ƒ_ƒ€”‚ğŠi”[‚·‚é”z—ñ‚ğİ’è
         ReDim T_Ary(Base_Num To Row_End)
         
-        'ãƒ©ãƒ³ãƒ€ãƒ æ•°ã‚’é…åˆ—ã«æ ¼ç´
+        'ƒ‰ƒ“ƒ_ƒ€”‚ğ”z—ñ‚ÉŠi”[
         If NotRandom = False Then
             Call Randomize
             For i = Base_Num To Row_End
@@ -144,12 +144,12 @@ Public Function Array_RandomArray(Dimention As Long, _
         If Row_End < Base_Num Then Exit Function
         If Col_End < Base_Num Then Exit Function
         
-        'ãƒ©ãƒ³ãƒ€ãƒ æ•°ã‚’æ ¼ç´ã™ã‚‹é…åˆ—ã‚’è¨­å®š
+        'ƒ‰ƒ“ƒ_ƒ€”‚ğŠi”[‚·‚é”z—ñ‚ğİ’è
         ReDim T_Ary(Base_Num To Row_End, Base_Num To Col_End)
         
         If NotRandom = False Then
             
-            'ãƒ©ãƒ³ãƒ€ãƒ æ•°ã‚’é…åˆ—ã«æ ¼ç´
+            'ƒ‰ƒ“ƒ_ƒ€”‚ğ”z—ñ‚ÉŠi”[
             Call Randomize
             For i = Base_Num To Row_End
                 For j = Base_Num To Col_End
@@ -195,12 +195,12 @@ End Function
 Public Function Array_ReDimPreserve(RedimAry As Variant, Optional AddSpace As Long = 1, Optional T_Dim As Long = 0)
     'ByRef
     
-    '- æ¬¡å…ƒæ•°ã®æŒ‡å®šãŒç„¡ã‘ã‚Œã°ã€å–å¾—ã™ã‚‹
+    '- ŸŒ³”‚Ìw’è‚ª–³‚¯‚ê‚ÎAæ“¾‚·‚é
     If T_Dim = 0 Then
         T_Dim = Array_DimCount(RedimAry)
     End If
     
-    '- ï¼‘æ¬¡å…ƒãƒ»ï¼’æ¬¡å…ƒã§ã€æ ã‚’æ‹¡å¼µã™ã‚‹
+    '- ‚PŸŒ³E‚QŸŒ³‚ÅA˜g‚ğŠg’£‚·‚é
     Select Case T_Dim
     
     Case 1
@@ -214,9 +214,9 @@ Public Function Array_ReDimPreserve(RedimAry As Variant, Optional AddSpace As Lo
 End Function
 
 Private Function Array_Trans(DataAry As Variant, Optional ByRefReturn As Boolean = False) As Variant
-'+ é…åˆ—ã‚’é€†è»¢ã™ã‚‹(1æ¬¡é…åˆ—(æ¨ª)ã®å ´åˆã¯ã€2æ¬¡é…åˆ—(ç¸¦)ã«ã™ã‚‹)
-'- Appã®Transposeã§ã¯,è¡Œoråˆ—æ–¹å‘ã®è¦ç´ æ•°ãŒ65536ã‚’è¶…ãˆãŸå ´åˆã€Œå‹ãŒä¸€è‡´ã—ãªã„ã€ã¨ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã€‚
-'+ Appã®Transposeã¨ã®å‡¦ç†é€Ÿåº¦ã¯ã€ã»ã¨ã‚“ã©å¤‰ã‚ã‚‰ãªã„å¾®å·®
+'+ ”z—ñ‚ğ‹t“]‚·‚é(1Ÿ”z—ñ(‰¡)‚Ìê‡‚ÍA2Ÿ”z—ñ(c)‚É‚·‚é)
+'- App‚ÌTranspose‚Å‚Í,sor—ñ•ûŒü‚Ì—v‘f”‚ª65536‚ğ’´‚¦‚½ê‡uŒ^‚ªˆê’v‚µ‚È‚¢v‚ÆƒGƒ‰[‚É‚È‚éB
+'+ App‚ÌTranspose‚Æ‚Ìˆ—‘¬“x‚ÍA‚Ù‚Æ‚ñ‚Ç•Ï‚í‚ç‚È‚¢”÷·
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -254,7 +254,7 @@ Private Function Array_Trans(DataAry As Variant, Optional ByRefReturn As Boolean
     If ByRefReturn = False Then
         Array_Trans = RetAry
     Else
-        '+ ãƒ‡ãƒ¼ã‚¿é…åˆ—ãŒå¤§ãéãã‚‹å ´åˆã¯ã€å¼•æ•°ã‚’ä¸€æ—¦è§£æ”¾ã—ã¦æ ¼ç´ã—ç›´ã™
+        '+ ƒf[ƒ^”z—ñ‚ª‘å‚«‰ß‚¬‚éê‡‚ÍAˆø”‚ğˆê’U‰ğ•ú‚µ‚ÄŠi”[‚µ’¼‚·
         DataAry = Empty
         DataAry = RetAry
     End If
@@ -287,7 +287,7 @@ Public Function Array_Replace(DataAry As Variant, FindVal As Variant, ReplaceVal
         
     Case 2
         
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 
@@ -331,7 +331,7 @@ Public Function Array_BaseN(DataAry As Variant, BaseN As Long) As Variant
         
         ReDim RetAry(BaseN To BaseN + Row_U - Row_L, BaseN To BaseN + Col_U - Col_L)
         
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 RetAry(BaseN + i - Row_L, BaseN + j - Col_L) = DataAry(i, j)
@@ -382,7 +382,7 @@ Public Function Array_Merge(Array1 As Variant, Array2 As Variant, Optional Direc
         Dim_Ary2 = Array_DimCount(Array2)
         
         If Dim_Ary1 <> Dim_Ary2 Then
-            Call MsgBox("çµåˆã™ã‚‹é…åˆ—ã®æ¬¡å…ƒãŒä¸€è‡´ã—ã¦ã„ã¾ã›ã‚“", vbCritical)
+            Call MsgBox("Œ‹‡‚·‚é”z—ñ‚ÌŸŒ³‚ªˆê’v‚µ‚Ä‚¢‚Ü‚¹‚ñ", vbCritical)
             Exit Function
         End If
         
@@ -446,14 +446,14 @@ Public Function Array_Merge(Array1 As Variant, Array2 As Variant, Optional Direc
                 
                 ReDim MergeAry(Row_S To Row_E, Col_S To Col_E)
                 
-                '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+                '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
                 For j = Col_L1 To Col_U1
                     For i = Row_L1 To Row_U1
                         MergeAry(i, j) = Array1(i, j)
                     Next
                 Next
                 
-                '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+                '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
                 Row_S = Row_U1 + 1
                 Col_S = Col_L1
                 Col_E = Col_U2 - (Col_L2 - Col_L1)
@@ -481,7 +481,7 @@ Public Function Array_Merge(Array1 As Variant, Array2 As Variant, Optional Direc
                 
                 ReDim MergeAry(Row_S To Row_E, Col_S To Col_E)
                 
-                '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+                '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
                 For j = Col_L1 To Col_U1
                     For i = Row_L1 To Row_U1
                         MergeAry(i, j) = Array1(i, j)
@@ -492,7 +492,7 @@ Public Function Array_Merge(Array1 As Variant, Array2 As Variant, Optional Direc
                 Row_E = Row_U2 - (Row_L2 - Row_L1)
                 Col_S = Col_U1 + 1
                 
-                '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+                '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
                 h = Col_L2
                 For j = Col_S To Col_E
                     k = Row_L2
@@ -541,7 +541,7 @@ Public Function Array_Convert_IsNull_to_NullStr(DataAry As Variant)
         
     Case 2
             
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 
@@ -584,7 +584,7 @@ Public Function Array_Convert_NullStr_to_Null(DataAry As Variant)
         
     Case 2
         
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 
@@ -643,7 +643,7 @@ Public Function Array_Exist(DataAry As Variant, FindVals As Variant) As Boolean
         Call Array_Lbound_Ubound(DataAry, Row_L, Row_U, Col_L, Col_U)
         Call Array_Lbound_Ubound(FindAry, Fin_L, Fin_U)
         
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             
             For i = Row_L To Row_U
@@ -762,7 +762,7 @@ Public Function Array_Fill(DataAry As Variant, FillVal As Variant)
         
     Case 2
         
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 DataAry(i, j) = FillVal
@@ -923,7 +923,7 @@ Private Function PRV_Convert_DataType(DataAry As Variant, ConvAry As Variant) As
     Dim Col_L       As Long
     Dim Col_U       As Long
     
-'+ é…åˆ—ã®å€¤ãŒå‹ã«åˆã‚ãªã‹ã£ãŸå ´åˆã€Emptyã§è¿”ã™
+'+ ”z—ñ‚Ì’l‚ªŒ^‚É‡‚í‚È‚©‚Á‚½ê‡AEmpty‚Å•Ô‚·
 On Error GoTo Terminate
     
     Call Array_Lbound_Ubound(DataAry, Row_L, Row_U, Col_L, Col_U)
@@ -939,7 +939,7 @@ On Error GoTo Terminate
         Next
         
     Case 2
-        '+ é«˜é€ŸåŒ–ã®ç‚º,Colã‹ã‚‰å›ã™
+        '+ ‚‘¬‰»‚Ìˆ×,Col‚©‚ç‰ñ‚·
         ReDim ConvAry(Row_L To Row_U, Col_L To Col_U)
         For j = Col_L To Col_U
             For i = Row_L To Row_U
@@ -960,7 +960,7 @@ Terminate:
 End Function
 
 Public Function Array_to_String(DataAry As Variant, Optional Delimiter As String = ",", Optional CrLf As String = vbCrLf) As String
-'é…åˆ—ã®å€¤ã‚’æ–‡å­—åˆ—ã«ã™ã‚‹
+'”z—ñ‚Ì’l‚ğ•¶š—ñ‚É‚·‚é
     
     Dim i           As Long
     Dim j           As Long
@@ -985,35 +985,35 @@ Public Function Array_to_String(DataAry As Variant, Optional Delimiter As String
         
         Call Array_Lbound_Ubound(DataAry, Row_L, Row_U, Col_L, Col_U)
         
-        '- è¡Œå˜ä½ã®ãƒ‡ãƒ¼ã‚¿æ ¼ç´é…åˆ—ã‚’æº–å‚™
+        '- s’PˆÊ‚Ìƒf[ƒ^Ši”[”z—ñ‚ğ€”õ
         ReDim LineAry(Col_L To Col_U)
         
-        '- å„è¡Œã§
+        '- Šes‚Å
         For i = Row_L To Row_U
             
-            '- è¡Œå˜ä½ã®å„å€¤ã‚’æ ¼ç´
+            '- s’PˆÊ‚ÌŠe’l‚ğŠi”[
             For j = Col_L To Col_U
                 
                 LineAry(j) = CStr(DataAry(i, j))
                 
             Next
             
-            '- è¡Œå˜ä½ã®æ–‡å­—åˆ—ã‚’ä½œæˆ
+            '- s’PˆÊ‚Ì•¶š—ñ‚ğì¬
             LineStr = Join(LineAry, Delimiter)
             
-            '- è¡Œå˜ä½ã‚’çµåˆã—ã¦ã„ã
+            '- s’PˆÊ‚ğŒ‹‡‚µ‚Ä‚¢‚­
             AryStr = AryStr & CrLf & LineStr
             
         Next
         
-        '- é ­ã‚’é™¤å»
+        '- “ª‚ğœ‹
         If AryStr <> "" Then
             AryStr = Mid$(AryStr, Len(CrLf) + 1)
         End If
         
     End Select
                 
-    'æˆ»ã‚Šå€¤
+    '–ß‚è’l
     Array_to_String = AryStr
         
 End Function
@@ -1054,11 +1054,11 @@ Public Function Array_to_Dictionary(DataAry As Variant) As Scripting.Dictionary
         Col_L = LBound(DataAry, 2)
         Col_U = UBound(DataAry, 2)
         
-        '- 1åˆ—ç›®ã‚’Keyåˆ—ã€2åˆ—ç›®ã‚’Itemåˆ—ã«è¨­å®š
+        '- 1—ñ–Ú‚ğKey—ñA2—ñ–Ú‚ğItem—ñ‚Éİ’è
         Col_K = Col_L
         Col_I = Col_K + 1
         
-        '- 1åˆ—ã ã‘ã®å ´åˆ
+        '- 1—ñ‚¾‚¯‚Ìê‡
         If Col_L = Col_U Then
             
             For i = Row_L To Row_U
@@ -1067,7 +1067,7 @@ Public Function Array_to_Dictionary(DataAry As Variant) As Scripting.Dictionary
                 End If
             Next
             
-        '- è¤‡æ•°åˆ—ã®å ´åˆ
+        '- •¡”—ñ‚Ìê‡
         Else
             
             For i = Row_L To Row_U
@@ -1100,7 +1100,7 @@ Public Function Array_to_Dictionary2(KeyAry As Variant, Optional ItemAry As Vari
     Dim Row_Item_L  As Long
     Dim Row_Item_U  As Long
     
-    '- æ¬¡å…ƒæ•°ã‚’å–å¾—
+    '- ŸŒ³”‚ğæ“¾
     Dim_Key = Array_DimCount(KeyAry)
     Dim_Item = Array_DimCount(ItemAry)
     
@@ -1108,27 +1108,27 @@ Public Function Array_to_Dictionary2(KeyAry As Variant, Optional ItemAry As Vari
     
     Case 1
         
-        '- Keyã¨Itemã‹ã‚‰è¾æ›¸ã‚’ä½œæˆ
+        '- Key‚ÆItem‚©‚ç«‘‚ğì¬
         Set Dic_Ary = New Scripting.Dictionary
         
-        '- è¦ç´ æƒ…å ±ã‚’å–å¾—
+        '- —v‘fî•ñ‚ğæ“¾
         Call Array_Lbound_Ubound(KeyAry, Row_Key_L, Row_Key_U)
         
-        '- Itemé…åˆ—ãŒ1æ¬¡å…ƒã®å ´åˆã€è¦ç´ æƒ…å ±ã‚’å–å¾—ã—ã¦ãŠã
+        '- Item”z—ñ‚ª1ŸŒ³‚Ìê‡A—v‘fî•ñ‚ğæ“¾‚µ‚Ä‚¨‚­
         If Dim_Item = 1 Then
             Call Array_Lbound_Ubound(ItemAry, Row_Item_L, Row_Item_U)
         Else
             Row_Item_U = -1
         End If
         
-        '- é–‹å§‹ä½ç½®ã‚’å–å¾—
+        '- ŠJnˆÊ’u‚ğæ“¾
         i_Item = Row_Item_L
         
         For i_Key = Row_Key_L To Row_Key_U
             
             If Dic_Ary.Exists(KeyAry(i_Key)) = False Then
                 
-                '- ItemãŒã‚ã‚‹å ´åˆ
+                '- Item‚ª‚ ‚éê‡
                 If i_Item <= Row_Item_U Then
                     
                     Call Dic_Ary.Add(KeyAry(i_Key), ItemAry(i_Item))
@@ -1141,7 +1141,7 @@ Public Function Array_to_Dictionary2(KeyAry As Variant, Optional ItemAry As Vari
                 
             End If
             
-            '- Keyã¨Itemã®ä½ç½®ã¯åŒæœŸã•ã›ã¦ãŠã
+            '- Key‚ÆItem‚ÌˆÊ’u‚Í“¯Šú‚³‚¹‚Ä‚¨‚­
             i_Item = i_Item + 1
             
         Next
@@ -1155,7 +1155,7 @@ Public Function Array_to_Dictionary2(KeyAry As Variant, Optional ItemAry As Vari
 End Function
 
 Public Function Array_CountA(DataAry As Variant, Optional NoCountNullString As Boolean = True) As Long
-'+ é…åˆ—å†…ã®å€¤ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹
+'+ ”z—ñ“à‚Ì’l‚ğƒJƒEƒ“ƒg‚·‚é
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1241,26 +1241,26 @@ Public Function Array_Equals(Array1 As Variant, Array2 As Variant) As Boolean
     
     Case 1
         
-        '- è¡Œè¦ç´ ã®èª¿æ•´ç”¨
+        '- s—v‘f‚Ì’²®—p
         Adjust_Row = Row_L2 - Row_L1
         
-        '- å„å€¤ã‚’æ¯”è¼ƒã—ã€ä¸€è‡´ã—ãªã‹ã£ãŸå ´åˆã¯æŠœã‘ã‚‹
+        '- Še’l‚ğ”äŠr‚µAˆê’v‚µ‚È‚©‚Á‚½ê‡‚Í”²‚¯‚é
         For i = Row_L1 To Row_U1
             
             If Array1(i) <> Array2(i + Adjust_Row) Then Exit Function
             
         Next
         
-        '- è¾¿ã‚Šç€ã„ãŸã‚‰ã€ä¸€è‡´ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
+        '- ’H‚è’…‚¢‚½‚çAˆê’vƒtƒ‰ƒO‚ğ—§‚Ä‚é
         Flg_Equal = True
         
     Case 2
         
-        '- è¦ç´ ã®èª¿æ•´ç”¨
+        '- —v‘f‚Ì’²®—p
         Adjust_Row = Row_L2 - Row_L1
         Adjust_Col = Col_L2 - Col_L1
         
-        '- å„å€¤ã‚’æ¯”è¼ƒã—ã€ä¸€è‡´ã—ãªã‹ã£ãŸå ´åˆã¯æŠœã‘ã‚‹
+        '- Še’l‚ğ”äŠr‚µAˆê’v‚µ‚È‚©‚Á‚½ê‡‚Í”²‚¯‚é
         For j = Col_L1 To Col_U1
             
             For i = Row_L1 To Row_U1
@@ -1271,12 +1271,12 @@ Public Function Array_Equals(Array1 As Variant, Array2 As Variant) As Boolean
             
         Next
         
-        '- è¾¿ã‚Šç€ã„ãŸã‚‰ã€ä¸€è‡´ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
+        '- ’H‚è’…‚¢‚½‚çAˆê’vƒtƒ‰ƒO‚ğ—§‚Ä‚é
         Flg_Equal = True
         
     End Select
     
-    '- æˆ»ã‚Šå€¤
+    '- –ß‚è’l
     Array_Equals = Flg_Equal
     
 End Function
@@ -1309,27 +1309,27 @@ Public Function Array_EqualSize(Array1 As Variant, Array2 As Variant) As Boolean
     
     Case 1
         
-        '- è¡Œæ•°ãŒç•°ãªã£ãŸå ´åˆã€çµ‚äº†
+        '- s”‚ªˆÙ‚È‚Á‚½ê‡AI—¹
         Len_1 = Row_U1 - Row_L1 + 1
         Len_2 = Row_U2 - Row_L2 + 1
         If Len_1 <> Len_2 Then Exit Function
         
-        '- è¾¿ã‚Šç€ã„ãŸã‚‰ã€ä¸€è‡´ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
+        '- ’H‚è’…‚¢‚½‚çAˆê’vƒtƒ‰ƒO‚ğ—§‚Ä‚é
         Flg_Equal = True
         
     Case 2
         
-        '- è¡Œæ•°ãŒç•°ãªã£ãŸå ´åˆã€çµ‚äº†
+        '- s”‚ªˆÙ‚È‚Á‚½ê‡AI—¹
         Len_1 = Row_U1 - Row_L1 + 1
         Len_2 = Row_U2 - Row_L2 + 1
         If Len_1 <> Len_2 Then Exit Function
         
-        '- åˆ—æ•°ãŒç•°ãªã£ãŸå ´åˆã€çµ‚äº†
+        '- —ñ”‚ªˆÙ‚È‚Á‚½ê‡AI—¹
         Len_1 = Col_U1 - Col_L1 + 1
         Len_2 = Col_U2 - Col_L2 + 1
         If Len_1 <> Len_2 Then Exit Function
         
-        '- è¾¿ã‚Šç€ã„ãŸã‚‰ã€ä¸€è‡´ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
+        '- ’H‚è’…‚¢‚½‚çAˆê’vƒtƒ‰ƒO‚ğ—§‚Ä‚é
         Flg_Equal = True
         
     End Select
@@ -1339,7 +1339,7 @@ Public Function Array_EqualSize(Array1 As Variant, Array2 As Variant) As Boolean
 End Function
 
 Public Function Array_Sum(Array1 As Variant, Array2 As Variant) As Variant
-'- åŠ ç®—
+'- ‰ÁZ
 
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1381,7 +1381,7 @@ Public Function Array_Sum(Array1 As Variant, Array2 As Variant) As Variant
 End Function
 
 Public Function Array_Difference(Array1 As Variant, Array2 As Variant) As Variant
-'- æ¸›ç®—
+'- Œ¸Z
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1423,7 +1423,7 @@ Public Function Array_Difference(Array1 As Variant, Array2 As Variant) As Varian
 End Function
 
 Public Function Array_Product(Array1 As Variant, Array2 As Variant) As Variant
-'- ä¹—ç®—
+'- æZ
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1465,8 +1465,8 @@ Public Function Array_Product(Array1 As Variant, Array2 As Variant) As Variant
 End Function
 
 Public Function Array_Quotient(Array1 As Variant, Array2 As Variant) As Variant
-'- é™¤ç®—
-'+ é™¤æ•°ãŒ0ã®å ´åˆ,0ã‚’è¿”ã™
+'- œZ
+'+ œ”‚ª0‚Ìê‡,0‚ğ•Ô‚·
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1516,8 +1516,8 @@ Public Function Array_Quotient(Array1 As Variant, Array2 As Variant) As Variant
 End Function
 
 Public Function Array_Mod(Array1 As Variant, Array2 As Variant) As Variant
-'- é™¤ç®—ã®ä½™ã‚Š
-'+ é™¤æ•°ãŒ0ã®å ´åˆ,ãã®ã¾ã¾ã®å€¤ã‚’è¿”ã™
+'- œZ‚Ì—]‚è
+'+ œ”‚ª0‚Ìê‡,‚»‚Ì‚Ü‚Ü‚Ì’l‚ğ•Ô‚·
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1596,7 +1596,7 @@ Public Function Array_SumIf(DataAry As Variant, Col_Key As Long, key As Variant,
     
     Case 2
         
-        '- å„ãƒ‡ãƒ¼ã‚¿è¡Œã§
+        '- Šeƒf[ƒ^s‚Å
         For i = Row_L To Row_U
             
             If DataAry(i, Col_Key) = key Then
@@ -1644,7 +1644,7 @@ Public Function Array_CountIf(DataAry As Variant, FindVal As Variant) As Long
         
     Case 2
         
-        '- å„ãƒ‡ãƒ¼ã‚¿è¡Œã§
+        '- Šeƒf[ƒ^s‚Å
         For j = Col_L To Col_U
             For i = Row_L To Row_U
                 If DataAry(i, j) = FindVal Then
@@ -1729,7 +1729,7 @@ Public Function Array_IsNumeric(DataAry As Variant) As Boolean
     
     T_Dim = Array_DimCount(DataAry)
     
-    '- åˆæœŸå€¤
+    '- ‰Šú’l
     Flg_Is = True
     
     Select Case T_Dim
@@ -1761,7 +1761,7 @@ Public Function Array_IsNumeric(DataAry As Variant) As Boolean
 End Function
 
 Public Function Array_Dim1_to_Dim2(DataAry As Variant, Optional Len_Col As Long = 1)
-'- 1æ¬¡å…ƒé…åˆ—ã‚’æŒ‡å®šåˆ—æ•°ã®2æ¬¡å…ƒé…åˆ—ã«å¤‰æ›ã™ã‚‹
+'- 1ŸŒ³”z—ñ‚ğw’è—ñ”‚Ì2ŸŒ³”z—ñ‚É•ÏŠ·‚·‚é
     
     Dim T_Dim       As Long
     Dim Row_L       As Long
@@ -1784,17 +1784,17 @@ Public Function Array_Dim1_to_Dim2(DataAry As Variant, Optional Len_Col As Long 
     
     Case 1
         
-        '- å…ƒã®è¡Œæ•°ã‚’å–å¾—
+        '- Œ³‚Ìs”‚ğæ“¾
         Cnt_Row = Row_U - Row_L + 1
         
-        '- åˆ—æ•°ã‚’è¨­å®š
+        '- —ñ”‚ğİ’è
         If 1 <= Len_Col Then
             Cnt_Col = Len_Col
         Else
             Cnt_Col = 1
         End If
         
-        '- 2æ¬¡å…ƒã«å¤‰æ›å¾Œã®å¿…è¦è¡Œæ•°ã‚’å–å¾—
+        '- 2ŸŒ³‚É•ÏŠ·Œã‚Ì•K—vs”‚ğæ“¾
         i1 = Fix(Cnt_Row / Cnt_Col)
         If Cnt_Row Mod Cnt_Col <> 0 Then
             i2 = 1
@@ -1803,14 +1803,14 @@ Public Function Array_Dim1_to_Dim2(DataAry As Variant, Optional Len_Col As Long 
         
         ReDim RetAry(0 To Row_E - 1, 0 To Cnt_Col - 1)
         
-        '- 1æ¬¡å…ƒé…åˆ—ã®è¡Œã‚’ã€æ ¼ç´é…åˆ—ã®è¡Œæ•°åˆ†ã‚¹ã‚­ãƒƒãƒ—ã—ãªãŒã‚‰å›ã™
+        '- 1ŸŒ³”z—ñ‚Ìs‚ğAŠi”[”z—ñ‚Ìs”•ªƒXƒLƒbƒv‚µ‚È‚ª‚ç‰ñ‚·
         k = Row_L
         For i = Row_L To Row_U Step Cnt_Col
             
-            '- åˆ—æ•°åˆ†ã€å€¤ã‚’é…åˆ—ã«æ ¼ç´
+            '- —ñ”•ªA’l‚ğ”z—ñ‚ÉŠi”[
             For j = i To i + Cnt_Col - 1
                 
-                '- ãƒ‡ãƒ¼ã‚¿æœ€çµ‚è¡Œã¾ã§ã€ãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´
+                '- ƒf[ƒ^ÅIs‚Ü‚ÅAƒf[ƒ^‚ğŠi”[
                 If j <= Row_U Then
                 
                     RetAry(k, j - i) = DataAry(j)
@@ -1828,7 +1828,7 @@ Public Function Array_Dim1_to_Dim2(DataAry As Variant, Optional Len_Col As Long 
 End Function
 
 Public Function Array_Dim11_to_Dim2(DataAry As Variant)
-'+ 1æ¬¡å…ƒx1æ¬¡å…ƒé…åˆ—ã‚’2æ¬¡å…ƒé…åˆ—ã«å¤‰æ›ã™ã‚‹
+'+ 1ŸŒ³x1ŸŒ³”z—ñ‚ğ2ŸŒ³”z—ñ‚É•ÏŠ·‚·‚é
     
     Dim T_Dim       As Long
     Dim Row_L       As Long

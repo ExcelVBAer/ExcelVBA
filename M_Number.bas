@@ -1,23 +1,23 @@
-ï»¿Attribute VB_Name = "M_Number"
+Attribute VB_Name = "M_Number"
 Option Explicit
 
 Public Function Number_10_to_2(Val_Decimal As Long) As Long
-'- 10é€²æ•°â†’2é€²æ•°
+'- 10i”¨2i”
     
-    '+ é–¢æ•°ã§ã¯é™ç•Œ(511)ãŒã‚ã‚‹
+    '+ ŠÖ”‚Å‚ÍŒÀŠE(511)‚ª‚ ‚é
 '    Number_10_to_2 = CLng(Application.WorksheetFunction.Dec2Bin(Var_Decimal))
     
     Dim T_Val       As Long
     Dim Val_Bin     As String
     Dim BaseNum     As Long
     
-    '- é€²æ•°ã‚’è¨­å®š
+    '- i”‚ğİ’è
     BaseNum = 2
     
-    '- ä¸€æ—¦æ ¼ç´
+    '- ˆê’UŠi”[
     T_Val = Val_Decimal
     
-    '- å¤‰æ›
+    '- •ÏŠ·
     Val_Bin = ""
     Do
         
@@ -27,15 +27,15 @@ Public Function Number_10_to_2(Val_Decimal As Long) As Long
         
     Loop Until T_Val = 0
     
-    '- æˆ»ã‚Šå€¤
+    '- –ß‚è’l
     Number_10_to_2 = CLng(Val_Bin)
     
 End Function
 
 Public Function Number_2_to_10(Val_Binary As Long) As Long
-'- 2é€²æ•°â†’10é€²æ•°
+'- 2i”¨10i”
     
-    '+ é–¢æ•°ã§ã¯é™ç•Œ(511)ãŒã‚ã‚‹
+    '+ ŠÖ”‚Å‚ÍŒÀŠE(511)‚ª‚ ‚é
 '    Convert_2_to_10 = CLng(Application.WorksheetFunction.Bin2Dec(Var_Binary))
     
     Dim i       As Long
@@ -44,15 +44,15 @@ Public Function Number_2_to_10(Val_Binary As Long) As Long
     Dim BaseNum As Long
     Dim Len_Str As Long
     
-    '- é€²æ•°ã‚’è¨­å®š
+    '- i”‚ğİ’è
     BaseNum = 2
     
-    '- ä¸€æ—¦æ ¼ç´
-    '+ åè»¢ã•ã›ã¦ä¸‹ã‹ã‚‰è¨ˆç®—ã™ã‚‹
+    '- ˆê’UŠi”[
+    '+ ”½“]‚³‚¹‚Ä‰º‚©‚çŒvZ‚·‚é
     T_Val = StrReverse(CStr(Val_Binary))
     Len_Str = Len(T_Val)
     
-    '- å¤‰æ›
+    '- •ÏŠ·
     Val_Dec = 0
     For i = 1 To Len_Str
         
@@ -60,7 +60,7 @@ Public Function Number_2_to_10(Val_Binary As Long) As Long
         
     Next
     
-    '- æˆ»ã‚Šå€¤
+    '- –ß‚è’l
     Number_2_to_10 = Val_Dec
     
 End Function
@@ -83,7 +83,7 @@ Public Function Number_16_to_10(Val_Hex As String) As Long
     
     Head = "&H"
     
-    '- é ­æ–‡å­—ãŒä¸è¦ã®å ´åˆã¯é™¤å»
+    '- “ª•¶š‚ª•s—v‚Ìê‡‚Íœ‹
     If Len(Val_Hex) > 2 Then
         
         If Left$(Val_Hex, 2) = Head Then
@@ -99,15 +99,15 @@ Public Function Number_16_to_10(Val_Hex As String) As Long
 End Function
 
 Public Function Number_10_to_nn(Val_Decimal As Long, BaseNum As Long) As Long
-'- 10é€²æ•°â†’né€²æ•°
+'- 10i”¨ni”
     
     Dim T_Val       As Long
     Dim Val_nn      As String
     
-    '- ä¸€æ—¦æ ¼ç´
+    '- ˆê’UŠi”[
     T_Val = Val_Decimal
     
-    '- å¤‰æ›
+    '- •ÏŠ·
     Val_nn = ""
     Do
         
@@ -117,13 +117,13 @@ Public Function Number_10_to_nn(Val_Decimal As Long, BaseNum As Long) As Long
         
     Loop Until T_Val = 0
     
-    '- æˆ»ã‚Šå€¤
+    '- –ß‚è’l
     Number_10_to_nn = CLng(Val_nn)
     
 End Function
 
 Public Function Number_Time_to_Serial(Val_Time As Double) As Double
-'æ™‚é–“ã®ã‚·ãƒªã‚¢ãƒ«å€¤å¤‰æ›
+'ŠÔ‚ÌƒVƒŠƒAƒ‹’l•ÏŠ·
     
     Dim Num_Date        As Long
     Dim Num_Hour        As Long
@@ -131,15 +131,15 @@ Public Function Number_Time_to_Serial(Val_Time As Double) As Double
     Dim Num_Temp        As Double
     Dim Num_Serial      As Double
     
-    '- å¯¾è±¡å€¤ãŒ0ã®å ´åˆã€0ã‚’è¿”ã™
+    '- ‘ÎÛ’l‚ª0‚Ìê‡A0‚ğ•Ô‚·
     If Val_Time = 0 Then
         
         Num_Serial = 0
     
-    '- å¯¾è±¡å€¤ãŒ0ä»¥å¤–ã®å ´åˆ
+    '- ‘ÎÛ’l‚ª0ˆÈŠO‚Ìê‡
     Else
         
-        '- æ—¥ã®æ•°ã€æ™‚é–“ã®æ•°ã€ãã®ä»–ç«¯æ•°ã‚’æ±‚ã‚ã‚‹
+        '- “ú‚Ì”AŠÔ‚Ì”A‚»‚Ì‘¼’[”‚ğ‹‚ß‚é
         Num_Date = Application.WorksheetFunction.RoundDown(Val_Time / 24, 0)
         
         Num_Hour = Application.WorksheetFunction.RoundDown(Val_Time - (Num_Date * 24), 0)
@@ -148,7 +148,7 @@ Public Function Number_Time_to_Serial(Val_Time As Double) As Double
         
         Num_Minute = Application.WorksheetFunction.Round(Num_Temp * 60, 0)
         
-        '- æˆ»å€¤
+        '- –ß’l
         Num_Serial = Num_Date + CDbl(TimeSerial(Num_Hour, Num_Minute, 0))
     
     End If

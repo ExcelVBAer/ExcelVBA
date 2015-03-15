@@ -1,4 +1,4 @@
-ï»¿Attribute VB_Name = "M_IS"
+Attribute VB_Name = "M_IS"
 Option Explicit
 
 Public Function IsNothing(Expression As Object) As Boolean
@@ -54,27 +54,27 @@ Public Function IsDictionary(Expression As Variant) As Boolean
 End Function
 
 Public Function IsNumber(Expression As Variant) As Boolean
-'+ å¯¾è±¡ãŒæ•°å­—ã‹åˆ¤å®š
+'+ ‘ÎÛ‚ª”š‚©”»’è
     
     Dim i           As Long
     Dim Len_Val     As Long
     Dim Flg_Num     As Boolean
     
-    '- æ•°å€¤ã¨è¦‹ãªã›ã‚‹å ´åˆ
+    '- ”’l‚ÆŒ©‚È‚¹‚éê‡
     If IsNumeric(Expression) = True Then
         
-        '- ãƒ•ãƒ©ã‚°åˆæœŸåŒ–
+        '- ƒtƒ‰ƒO‰Šú‰»
         Flg_Num = True
         
-        '- é•·ã•ã‚’å–å¾—
+        '- ’·‚³‚ğæ“¾
         Len_Val = Len(CStr(Expression))
         
-        '- å„æ–‡å­—æ¯ã«ã€æ•°å­—ã‹ã©ã†ã‹åˆ¤å®šã—ã€
+        '- Še•¶š–ˆ‚ÉA”š‚©‚Ç‚¤‚©”»’è‚µA
         For i = 1 To Len_Val
             
             If InStr(1, "0123456789", Mid$(Expression, i, 1), vbTextCompare) = 0 Then
                 
-                '- æ•°å­—ä»¥å¤–ãŒå«ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãƒ•ãƒ©ã‚°ã‚’ä¸‹ã’ã¦æŠœã‘ã‚‹
+                '- ”šˆÈŠO‚ªŠÜ‚Ü‚ê‚Ä‚¢‚½ê‡Aƒtƒ‰ƒO‚ğ‰º‚°‚Ä”²‚¯‚é
                 Flg_Num = False
                 
                 Exit For
@@ -90,27 +90,27 @@ Public Function IsNumber(Expression As Variant) As Boolean
 End Function
 
 Public Function IsDecimal(Expression As Variant) As Boolean
-'+ å¯¾è±¡ãŒ10é€²æ•°ã®æ•°å€¤ã‹åˆ¤å®š
+'+ ‘ÎÛ‚ª10i”‚Ì”’l‚©”»’è
     
     Dim i           As Long
     Dim Len_Val     As Long
     Dim Flg_Num     As Boolean
     
-    '- æ•°å€¤ã¨è¦‹ãªã›ã‚‹å ´åˆ
+    '- ”’l‚ÆŒ©‚È‚¹‚éê‡
     If IsNumeric(Expression) = True Then
         
-        '- ãƒ•ãƒ©ã‚°åˆæœŸåŒ–
+        '- ƒtƒ‰ƒO‰Šú‰»
         Flg_Num = True
         
-        '- é•·ã•ã‚’å–å¾—
+        '- ’·‚³‚ğæ“¾
         Len_Val = Len(CStr(Expression))
         
-        '- å„æ–‡å­—æ¯ã«ã€10é€²æ•°ã®æ–‡å­—åˆ—ã‹ã©ã†ã‹åˆ¤å®š
+        '- Še•¶š–ˆ‚ÉA10i”‚Ì•¶š—ñ‚©‚Ç‚¤‚©”»’è
         For i = 1 To Len_Val
             
             If InStr(1, "-.0123456789", Mid$(Expression, i, 1), vbTextCompare) = 0 Then
                 
-                '- æ•°å­—ä»¥å¤–ãŒå«ã¾ã‚Œã¦ã„ãŸå ´åˆã€ãƒ•ãƒ©ã‚°ã‚’ä¸‹ã’ã¦æŠœã‘ã‚‹
+                '- ”šˆÈŠO‚ªŠÜ‚Ü‚ê‚Ä‚¢‚½ê‡Aƒtƒ‰ƒO‚ğ‰º‚°‚Ä”²‚¯‚é
                 Flg_Num = False
                 
                 Exit For

@@ -1,4 +1,4 @@
-﻿Attribute VB_Name = "M_Collection"
+Attribute VB_Name = "M_Collection"
 Option Explicit
 
 Public Function Collection_to_Array(T_Colect As Collection) As Variant
@@ -40,7 +40,7 @@ Public Function Collection_to_Array(T_Colect As Collection) As Variant
         
     Case 2
         
-        '- 列数を取得
+        '- �񐔂��擾
         For Each LoopItem In T_Colect
             If LoopItem Is Nothing = False Then
                 Cnt_Col2 = LoopItem.Count

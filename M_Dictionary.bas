@@ -1,10 +1,10 @@
-ï»¿Attribute VB_Name = "M_Dictionary"
+Attribute VB_Name = "M_Dictionary"
 Option Explicit
 
 
 Public Function Dictionary_Copy(Dic_Base As Scripting.Dictionary) As Scripting.Dictionary
-'- è¾æ›¸ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
-'+ ãã®ã¾ã¾[Set]ã™ã‚‹ã¨ã€åŒã˜ãƒ¡ãƒ¢ãƒªã‚’ä½¿ç”¨ã™ã‚‹ã®ã§ã€ä¸€æ–¹ã§å€¤ã‚’å¤‰ãˆã‚‹ã¨ã€ã‚‚ã†ä¸€æ–¹ã®å€¤ã‚‚å¤‰ã‚ã£ã¦ã—ã¾ã†ç‚º
+'- «‘‚ğƒRƒs[‚·‚é
+'+ ‚»‚Ì‚Ü‚Ü[Set]‚·‚é‚ÆA“¯‚¶ƒƒ‚ƒŠ‚ğg—p‚·‚é‚Ì‚ÅAˆê•û‚Å’l‚ğ•Ï‚¦‚é‚ÆA‚à‚¤ˆê•û‚Ì’l‚à•Ï‚í‚Á‚Ä‚µ‚Ü‚¤ˆ×
     
     Dim Dic_Paste       As Scripting.Dictionary
     Dim LoopKey         As Variant
@@ -50,13 +50,13 @@ Public Function Dictionary_Merge(Dic_Base As Scripting.Dictionary, Dic_Add As Sc
             
             Set Dic_Merge = Dic_Base
             
-        '- ä¸¡æ–¹ã®è¾æ›¸ãŒã‚ã‚‹å ´åˆ
+        '- —¼•û‚Ì«‘‚ª‚ ‚éê‡
         Else
             
-            '- ãƒ™ãƒ¼ã‚¹ã®è¾æ›¸ã«
+            '- ƒx[ƒX‚Ì«‘‚É
             Set Dic_Merge = Dic_Base
             
-            '- è¿½åŠ è¾æ›¸ã‚’çµåˆã•ã›ã‚‹
+            '- ’Ç‰Á«‘‚ğŒ‹‡‚³‚¹‚é
             With Dic_Merge
                 
                 For Each LoopKey In Dic_Add.Keys
@@ -82,7 +82,7 @@ Public Function Dictionary_Merge(Dic_Base As Scripting.Dictionary, Dic_Add As Sc
 End Function
 
 Public Function Dictionary_Invert(T_Dic As Scripting.Dictionary) As Variant
-'+ Keyã¨Itemã‚’å…¥ã‚Œæ›¿ãˆã‚‹
+'+ Key‚ÆItem‚ğ“ü‚ê‘Ö‚¦‚é
     
     Dim KeyAry      As Variant
     Dim ItemAry     As Variant
@@ -126,7 +126,7 @@ Public Function Dictionary_Invert(T_Dic As Scripting.Dictionary) As Variant
 End Function
 
 Public Function Dictionary_to_Array(T_Dic As Scripting.Dictionary) As Variant
-'+ è¾æ›¸ã‚’é…åˆ—ã«ã™ã‚‹
+'+ «‘‚ğ”z—ñ‚É‚·‚é
 
     Dim KeyItemAry  As Variant
     Dim KeyAry      As Variant
@@ -159,7 +159,7 @@ Public Function Dictionary_to_Array(T_Dic As Scripting.Dictionary) As Variant
 End Function
 
 Public Function Dictionary_Item_Split(T_Dic As Scripting.Dictionary, Optional Delimiter As String = ",") As Scripting.Dictionary
-'+ è¾æ›¸ã®Itemã‚’Splitã™ã‚‹
+'+ «‘‚ÌItem‚ğSplit‚·‚é
     
     Dim i           As Long
     Dim Dic_Split   As Scripting.Dictionary
@@ -211,7 +211,7 @@ Public Function Dictionary_Item_Split(T_Dic As Scripting.Dictionary, Optional De
 End Function
 
 Public Function Dictionary_Item_Join(T_Dic As Scripting.Dictionary, Optional Delimiter As String = ",") As Scripting.Dictionary
-'+ è¾æ›¸ã®Itemã‚’Splitã™ã‚‹
+'+ «‘‚ÌItem‚ğSplit‚·‚é
     
     Dim i           As Long
     Dim Dic_Join    As Scripting.Dictionary
