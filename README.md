@@ -11,9 +11,7 @@ Tested in Windows7(64bit) Excel2010(32bit).
 
 ## MsysGit.txt 
 MsysGit Manual
-
-## M_Git 
-When VBA Module exported , the file convert from Shift-JIS to UTF-8
+For example Encode ShiftJIS
 
 ## M_Array 
 Array Functions  
