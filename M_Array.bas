@@ -3,7 +3,7 @@ Option Explicit
 
 Private Function IsAry(Expression As Variant) As Boolean
     
-    Dim Len_Ary     As Long 'Change
+    Dim Len_Ary     As Long 'Changes
     
     If IsArray(Expression) = True Then
         
