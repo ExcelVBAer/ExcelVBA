@@ -3,7 +3,7 @@ Option Explicit
 
 Public Function Collection_to_Array(T_Colect As Collection) As Variant
     
-    Dim T_Dim       As Long 'Pull2
+    Dim T_Dim       As Long 'Pull23
     Dim DataAry     As Variant
     Dim LoopItem    As Variant
     Dim LoopItem2   As Variant
